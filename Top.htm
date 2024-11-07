@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
 
 <head>
-	<!-- FName LName
-     Description:
-	   Date:2023-11-01           -->
+	<!-- Zenhayevsky Carolina Solorzano Acevedo
+      Description: Christian influencers social networks
+	  Date: 2024-11-07                -->
 	<title>Top Page</title>
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 	<style type="text/css">
@@ -22,13 +22,12 @@
 
 		table {
 			background-color: #000000;
+			font-size: 15px;
 		}
 
 		h1 {
 			color: rgb(3, 61, 52);
 		}
-
-		td {}
 
 		a {
 			color: rgb(122, 77, 17);
@@ -51,6 +50,39 @@
 		#buttonAlign {
 			padding-left: 25px;
 		}
+
+		input[type="text"],
+		input[type="password"] {
+			background-color: transparent;
+			color: aliceblue;
+			border: none;
+			border-bottom: 1px solid #d6cdcd;
+			width: 85px;
+			margin: 0px 5px 0px 5px;
+		}
+
+		#btnRegister,
+		#btnLogout {
+			background-color: transparent;
+			color: rgb(207, 90, 12);
+			border: none;
+			font-size: 12px;
+			margin-left: auto;
+			margin-right: 0;
+		}
+
+		#btnLogin {
+			background-color: rgb(3, 61, 52);
+			color: aliceblue;
+			border: none;
+			padding: 5px 15px 5px 15px;
+			border-radius: 3px;
+		}
+
+		.logout {
+			text-align: right;
+			padding-right: 10px;
+		}
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="JS/jquery-3.6.1.min.js"></script>
@@ -69,26 +101,39 @@
 					<table>
 						<tr>
 							<td class="login">User :</td>
-							<td class="login"><input type="text" name="firstname" id="user" />&nbsp;&nbsp;</td>
-							<td class="login"><input type="button" id="b1" onClick="authenticate_login()"
-									value="Login" /></td>
-						</tr>
-						<tr>
-							<td style="padding-right: 15px;" class="logout"><span id="uname"></span>
+							<td class="login">
+								<input type="text" name="firstname" id="user" />
+								&nbsp;&nbsp;
+							</td>
+
+							<td class="login">Password:</td>
+							<td class="login">
+								<input type="password" name="pwd" id="pwd" />
+								&nbsp;&nbsp;
+							</td>
+							<td class="login">
+								<input type="button" id="btnLogin" onClick="authenticate_login()" value="Login" />
 							</td>
 						</tr>
 						<tr>
-							<td class="login">Password:</td>
-							<td class="login"><input type="password" name="pwd" id="pwd" />&nbsp;&nbsp;</td>
-							<td class="logout"><input type="button" id="b2" onClick="authenticate_logout()"
-									value="Logout" /></td>
+							<td style="padding-right: 15px; color: rgb(4, 87, 74); font-weight: bold;" class="logout">
+								<span id="uname"></span>
+							</td>
+						</tr>
+						<tr>
+							<td class="logout">
+								<input type="button" id="btnLogout" onClick="authenticate_logout()" value="Logout" />
+							</td>
 						<tr>
 							<br />
+					</table>
+					<input class="login" id="btnRegister" type="button" id="b2" onClick="register()"
+						value="Register here" />
 				</form>
 			</td>
 		</tr>
 	</table>
-	<div style="display: flex; align-items: center;" class="menuLogin">
+	<div style="display: flex; align-items: center; justify-content: center;" class="menuLogin">
 		<a href="./Pages/Home.htm" target="Content_Frame">Home</a>
 		<a href="./Pages/Devotional.htm" target="Content_Frame">Daily devotional</a>
 		<a href="./Pages/Prayer.htm" target="Content_Frame">Ask for a prayer</a>
