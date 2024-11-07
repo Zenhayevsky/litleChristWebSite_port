@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
+<link rel="stylesheet" href="../globlaCss/pages.css">
+
+<head>
+	<!-- Zenhayevsky Carolina Solorzano Acevedo
+      Description: Christian influencers social networks
+	  Date: 2024-11-07                -->
+	<title>Content Page</title>
+	<style type="text/css">
+		body::-webkit-scrollbar {
+			display: none;
+		}
+
+		iframe {
+			position: fixed;
+			right: 20px;
+			bottom: 20px;
+			width: 300px;
+			height: 169px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			border-radius: 8px;
+			z-index: 1000;
+		}
+
+		h2 {
+
+			position: fixed;
+			right: 55px;
+			bottom: 50px;
+			width: 250px;
+			height: 169px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			border-radius: 8px;
+			z-index: 1000;
+			color: antiquewhite;
+		}
+
+		.loginModal {
+			background-color: rgba(212, 178, 26, 0.7);
+			border-radius: 20px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+			padding: 40px;
+		}
+	</style>
+</head>
+
+<body class="welcomeBg">
+	<h2> How to be a little Christ</h2>
+
+	<!-- Modal Login -->
+	<div class="loginModal">
+		<table>
+			<tr>
+				<td class="login">User :</td>
+				<td class="login"><input type="text" name="firstname" id="user" />&nbsp;&nbsp;</td>
+				<td class="login"><input type="button" id="b1" onClick="authenticate_login()" value="Login" /></td>
+			</tr>
+			<tr>
+				<td style="padding-right: 15px;" class="logout"><span id="uname"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="login">Password:</td>
+				<td class="login"><input type="password" name="pwd" id="pwd" />&nbsp;&nbsp;</td>
+				<td class="logout"><input type="button" id="b2" onClick="authenticate_logout()" value="Logout" /></td>
+			<tr>
+				<br />
+		</table>
+		<!-- <div class="pageIdentifier">Devotional</div> -->
+	</div>
+	<!-- Modal Register -->
+	<iframe width="250" height="215" src="https://www.youtube.com/embed/YUV_RB--6zQ?si=LdaM_s6Xj1Mt7jFY"
+		title="my video" framerborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pinture"
+		allowfullscreen>mm
+	</iframe>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+.pageIdentifier {
+    position: fixed;
+    right: 55px;
+    bottom: 90px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1000;
+    color: antiquewhite;
+    background-color: rgb(3, 61, 52);
+    border-radius: 10px;
+    padding: 10px  25px 10px 25px;
+    font-size: 1.2em;
+}
+
+
+
+.floatingDiv {
+    width: 85%;
+    height: 85%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.welcomeBg {
+    background: url("../images/cruzBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
+
+<head>
+	<!-- FName LName
+     Description:
+	   Date:2023-11-01           -->
+	<title>Top Page</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			background-color: #000000;
+			font-family: 'Playfair Display', serif;
+			color: rgb(122, 77, 17);
+		}
+
+		body::-webkit-scrollbar {
+			display: none;
+		}
+
+		table {
+			background-color: #000000;
+		}
+
+		h1 {
+			color: rgb(3, 61, 52);
+		}
+
+		td {}
+
+		a {
+			color: rgb(122, 77, 17);
+			margin-right: 55px;
+			text-decoration: none;
+		}
+
+		a:visited {
+			text-decoration: none;
+		}
+
+		a:focus {
+			color: rgb(190, 79, 14);
+		}
+
+		a:hover {
+			color: rgb(190, 79, 14);
+		}
+
+		#buttonAlign {
+			padding-left: 25px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="JS/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="JS/login.js"></script>
+</head>
+
+<body onload="load()">
+	<table width="100%">
+		<tr>
+			<!--<td> <img src="imgs/wall1.jpg" title="Hello" alt="logo" width="100"/> </td> -->
+			<td style="padding-left: 20px;">
+				<h1>Little Christ Life</h1>
+			</td>
+			<td align="right">
+				<form name="form1">
+					<table>
+						<!-- <tr>
+							<td class="login">User :</td>
+							<td class="login"><input type="text" name="firstname" id="user" />&nbsp;&nbsp;</td>
+							<td class="login"><input type="button" id="b1" onClick="authenticate_login()"
+									value="Login" /></td>
+						</tr> -->
+						<tr>
+							<td class="login"><input type="button" id="b1" onClick="openLoginModal()"
+									value="Login" /></td>
+						</tr>
+						<tr>
+							<td style="padding-right: 15px;" class="logout"><span id="uname"></span>
+							</td>
+						</tr>
+						<tr>
+							<!-- <td class="login">Password:</td>
+							<td class="login"><input type="password" name="pwd" id="pwd" />&nbsp;&nbsp;</td> -->
+							<td class="logout"><input type="button" id="b2" onClick="authenticate_logout()"
+									value="Logout" /></td>
+						<tr>
+							<br />
+					</table>
+				</form>
+			</td>
+		</tr>
+	</table>
+	<div style="display: flex; align-items: center;" class="menuLogin">
+		<a href="./Pages/Home.htm" target="Content_Frame">Home</a>
+		<a href="./Pages/Devotional.htm" target="Content_Frame">Daily devotional</a>
+		<a href="./Pages/Prayer.htm" target="Content_Frame">Ask for a prayer</a>
+		<a href="./Pages/findChurch.htm" target="Content_Frame">Find a church</a>
+		<a href="./Pages/ChristianInfluencers.htm" target="Content_Frame">My cristian Influencers</a>
+	</div>
+</body>
+
+</html>
