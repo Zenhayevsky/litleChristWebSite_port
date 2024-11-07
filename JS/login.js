@@ -51,7 +51,3 @@ function authenticate_logout()
      $(".menuLogin").hide() // show menuLogin
   });	
 }
-
-function openLoginModal() {
-  parent.frames['Content_Frame'].postMessage('loginModal', '*'); //show class loginModal
-}
