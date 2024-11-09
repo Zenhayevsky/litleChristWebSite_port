@@ -69,6 +69,7 @@
 			font-size: 12px;
 			margin-left: auto;
 			margin-right: 0;
+			cursor: pointer;
 		}
 
 		#btnLogin {
@@ -86,7 +87,12 @@
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="JS/jquery-3.6.1.min.js"></script>
-	<script type="text/javascript" src="JS/login.js"></script>
+	<script type="text/javascript" src="JS/login.js"></script>\
+	<script>
+		function register() {
+			parent.frames['Content_Frame'].postMessage('openRegisterModal', '*');
+		}
+	</script>
 </head>
 
 <body onload="load()">

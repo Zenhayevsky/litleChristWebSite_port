@@ -101,12 +101,23 @@
 		document.getElementById("aboutModal").style.display = "none";
 	}
 
+	//Open Register modal
+
 	function openRegisterModal() {
-		document.getElementById("registerModal").style.display = "block";
+		document.getElementById("registerModal").style.display = "flex";
 	}
+
+	
 	function closeRegisterModal() {
 		document.getElementById("registerModal").style.display = "none";
-	} 
+	}
+
+	//Hearing the messagem of Top_frame
+	window.addEventListener('message', function(event) {
+		if (event.data === 'openRegisterModal'){
+			openRegisterModal();
+		}
+	})
 </script>
 
 <body class="welcomeBg">
@@ -115,10 +126,11 @@
 	<!-- Modal Register -->
 	<div id="registerModal" class="modal">
 		<div class="modal-content">
-			<span class="close" onclick="closeAboutModal()">
+			<span class="close" onclick="closeRegisterModal()">
 				&times;
+			</span>
 				<p>form</p>
-				<img style="border-radius: 80px;" src="../images/recive.jpg" id="img_modal" title="professor"
+				<img style="border-radius: 200px;" src="../images/recive.jpg" id="img_modal" title="professor"
 					alt="professor" width="100" />
 		</div>
 	</div>
