@@ -86,6 +86,19 @@
 			background-color: black;
 		}
 
+		#userData {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0px;
+		}
+
+		#rightsideForm,
+		#leftsideForm {
+			margin: 10px 20px 0px 20px;
+			text-align: left;
+		}
+
 		/* @media (max-width: 600px) {
 			.mappedImage {
 				display: none;
@@ -107,14 +120,14 @@
 		document.getElementById("registerModal").style.display = "flex";
 	}
 
-	
+
 	function closeRegisterModal() {
 		document.getElementById("registerModal").style.display = "none";
 	}
 
 	//Hearing the messagem of Top_frame
-	window.addEventListener('message', function(event) {
-		if (event.data === 'openRegisterModal'){
+	window.addEventListener('message', function (event) {
+		if (event.data === 'openRegisterModal') {
 			openRegisterModal();
 		}
 	})
@@ -129,9 +142,75 @@
 			<span class="close" onclick="closeRegisterModal()">
 				&times;
 			</span>
-				<p>form</p>
-				<img style="border-radius: 200px;" src="../images/recive.jpg" id="img_modal" title="professor"
-					alt="professor" width="100" />
+			<div style="margin-top: 25px;">
+				<h3>Register and have access to more features</h3>
+				<form action="/action_page.php" method="post" id="form">
+					<fieldset style="background-color: #bda4b0;">
+						<legend style="color: #584d52;">Identification</legend>
+						<label for="username">username: </label>
+						<input required type="text" id="username" name="username" size="6" maxlength="4">
+						<label for="username">Password: </label>
+						<input required type="text" id="username" name="username" size="6" maxlength="4">
+						<br>
+					</fieldset>
+					<fieldset style="background-color: #F2DFBB">
+						<legend style="color: #635a4b">User data</legend>
+
+						<div id="userData">
+							<div id="leftsideForm">
+								<label for="Adress: ">Username: </label>
+								<input type="text" id="username" name="username" value="default" size="6" maxlength="4">
+								<br>
+								<br>
+								<label for="gender">Gender: </label>
+								<br>
+								<br>
+								<input type="radio" name="gender" value="male">Male<br>
+								<input type="radio" name="gender" value="female">Female<br>
+							</div>
+							<div id="rightsideForm"><label for="psw">city: </label>
+								<input type="password" id="psw" name="psw" size="6" maxlength="4">
+								<br>
+								<br>
+								<label for="age">State/Province: </label>
+								<input type="number" id="age" name="age" size="3" maxlength="3" min="1" max="125">
+								<br>
+								<br>
+								<label for="age">Postal Code: </label>
+								<input type="number" id="age" name="age" size="3" maxlength="3" min="1" max="125">
+								<br>
+								<br>
+								<label for="age">Contry: </label>
+								<select name="cars" id="cars">
+									<option value="volvo">Canada</option>
+									<option value="saab">USA</option>
+								</select>
+							</div>
+						</div>
+
+
+						<br>
+						<br>
+
+					</fieldset>
+
+					<br>
+
+					<input type="submit" value="*Submit*">
+					<input style="float:right" type="Cancel" value="*Reset*">
+
+					<datalist id="browsers">
+						<option value="Edge">
+						<option value="Firefox">
+						<option value="Chrome">
+						<option value="Opera">
+						<option value="Safari">
+					</datalist>
+				</form>
+			</div>
+
+			<!-- <img style="border-radius: 200px;" src="../images/recive.jpg" id="img_modal" title="professor"
+				alt="professor" width="100" /> -->
 		</div>
 	</div>
 	<!-- Modal AboutUs -->
@@ -169,7 +248,8 @@
 		allowfullscreen>
 	</iframe>
 
-	<span style="background-color: rgb(241, 181, 60); font-weight: bold; margin-top: 18%; padding:15px; border: 1px solid rgb(215, 198, 8)">
+	<span
+		style="background-color: rgb(241, 181, 60); font-weight: bold; margin-top: 18%; padding:15px; border: 1px solid rgb(215, 198, 8)">
 		Explore the image!
 	</span>
 
@@ -208,13 +288,15 @@
 			href="https://www.youtube.com/watch?v=XnU1KIbt60o" coords="286,241,295,239,302,234,297,228,291,226,287,234"
 			shape="poly">
 	</map>
-	<p style="margin-top:50px; color: aliceblue; position: absolute; width: 500px; text-justify:inherit; text-align: center; align-self: self-start; margin-left: 0px; margin-right: 60% ">
+	<p
+		style="margin-top:50px; color: aliceblue; position: absolute; width: 500px; text-justify:inherit; text-align: center; align-self: self-start; margin-left: 0px; margin-right: 60% ">
 		In the beginning was the Word, and the Word was with God,<br><br>
 		and the Word was God. The same was in the beginning with God. <br><br>
 		All things were made through him. Without him, nothing was made <br><br>
 		that has been made. In him was life, and the life was the light of men. <br><br>
-		The light shines in the darkness, <br><br> <span style="color: rgb(238, 75, 26)"><b> and the darkness hasn’t overcome it. </b>
-		<br> John 1:1-5</span>
+		The light shines in the darkness, <br><br> <span style="color: rgb(238, 75, 26)"><b> and the darkness hasn’t
+				overcome it. </b>
+			<br> John 1:1-5</span>
 	</p>
 </body>
 
