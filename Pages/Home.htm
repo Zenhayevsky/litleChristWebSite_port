@@ -106,32 +106,6 @@
 		} */
 	</style>
 </head>
-<script>
-	function openAboutModal() {
-		document.getElementById("aboutModal").style.display = "block";
-	}
-	function closeAboutModal() {
-		document.getElementById("aboutModal").style.display = "none";
-	}
-
-	//Open Register modal
-
-	function openRegisterModal() {
-		document.getElementById("registerModal").style.display = "flex";
-	}
-
-
-	function closeRegisterModal() {
-		document.getElementById("registerModal").style.display = "none";
-	}
-
-	//Hearing the messagem of Top_frame
-	window.addEventListener('message', function (event) {
-		if (event.data === 'openRegisterModal') {
-			openRegisterModal();
-		}
-	})
-</script>
 
 <body class="welcomeBg">
 	<h2> How to be a little Christ</h2>
@@ -145,12 +119,12 @@
 			<div style="margin-top: 25px;">
 				<h3>Register and have access to more features</h3>
 				<form action="/action_page.php" method="post" id="form">
-					<fieldset style="background-color: #bda4b0;">
-						<legend style="color: #584d52;">Identification</legend>
+					<fieldset style="background-color: #cdbe82;">
+						<legend style="color: #584d52;">Your new account</legend>
 						<label for="username">username: </label>
-						<input required type="text" id="username" name="username" size="6" maxlength="4">
-						<label for="username">Password: </label>
-						<input required type="text" id="username" name="username" size="6" maxlength="4">
+						<input required type="text" id="username" name="username" size="6" maxlength="8">
+						<label for="password">Password: </label>
+						<input required type="text" id="password" name="password" size="6" maxlength="8">
 						<br>
 					</fieldset>
 					<fieldset style="background-color: #F2DFBB">
@@ -158,8 +132,8 @@
 
 						<div id="userData">
 							<div id="leftsideForm">
-								<label for="Adress: ">Username: </label>
-								<input type="text" id="username" name="username" value="default" size="6" maxlength="4">
+								<label for="psw">city: </label>
+								<input type="text" id="city" name="city" size="6" maxlength="10">
 								<br>
 								<br>
 								<label for="gender">Gender: </label>
@@ -168,27 +142,23 @@
 								<input type="radio" name="gender" value="male">Male<br>
 								<input type="radio" name="gender" value="female">Female<br>
 							</div>
-							<div id="rightsideForm"><label for="psw">city: </label>
-								<input type="password" id="psw" name="psw" size="6" maxlength="4">
+							<div id="rightsideForm">
+
+								<label for="province">State/Province: </label>
+								<input type="text" id="province" name="province" size="3" maxlength="20">
 								<br>
 								<br>
-								<label for="age">State/Province: </label>
-								<input type="number" id="age" name="age" size="3" maxlength="3" min="1" max="125">
+								<label for="postalcode">Postal Code: </label>
+								<input type="text" id="postalcode" name="postalcode" size="7" maxlength="7">
 								<br>
 								<br>
-								<label for="age">Postal Code: </label>
-								<input type="number" id="age" name="age" size="3" maxlength="3" min="1" max="125">
-								<br>
-								<br>
-								<label for="age">Contry: </label>
-								<select name="cars" id="cars">
-									<option value="volvo">Canada</option>
-									<option value="saab">USA</option>
+								<label for="country">Contry: </label>
+								<select name="country" id="country">
+									<option value="Canada">Canada</option>
+									<option value="USA">USA</option>
 								</select>
 							</div>
 						</div>
-
-
 						<br>
 						<br>
 
@@ -196,16 +166,12 @@
 
 					<br>
 
-					<input type="submit" value="*Submit*">
-					<input style="float:right" type="Cancel" value="*Reset*">
-
-					<datalist id="browsers">
-						<option value="Edge">
-						<option value="Firefox">
-						<option value="Chrome">
-						<option value="Opera">
-						<option value="Safari">
-					</datalist>
+					<input
+						style=" margin-left:10px; float:left;cursor: pointer; border-radius: 5px; border: none; padding:2px;padding: 8px; background-color: aquamarine;"
+						type="submit" value="Submit">
+					<input
+						style=" margin-right:10px; float:right;cursor: pointer; width: 50px; border-radius: 5px; border: none; padding: 8px;"
+						type="reset" value="Reset">
 				</form>
 			</div>
 
@@ -224,9 +190,17 @@
 				drawing inspiration from the teachings of Christ. Guided by the principles found in 1 Corinthians 11:1
 				and 1 Peter 1:15-16
 			<blockquote>
-				<p><strong> 1 Corinthians 11:1 - "Follow my example, as I follow the example of Christ"</strong></p>
-				<p><strong> 1 Pedro 1:15 - "But just as he who called you is holy, so be holy in all you do; for it is
-						written: 'Be holy, because I am holy.'"</strong></p>
+				<a href="https://www.biblegateway.com/passage/?search=1%20Corinthians%2011:1&version=NLT#:~:text=1%20Corinthians%2011%3A1%20New%20Living%20Translation%2011%201,should%20imitate%20me%2C%20just%20as%20I%20imitate%20Christ."
+					target="_blank">
+					<p><strong> 1 Corinthians 11:1 - "Follow my example, as I follow the example of Christ"</strong></p>
+				</a>
+				<a href="https://www.biblestudytools.com/1-peter/passage/?q=1+peter+1:15-25#:~:text=1%20Peter%201%3A15-25%2015%20But%20just%20as%20he,your%20time%20as%20foreigners%20here%20in%20reverent%20fear."
+					target="_blank">
+
+					<p><strong> 1 Pedro 1:15 - "But just as he who called you is holy, so be holy in all you do; for it
+							is
+							written: 'Be holy, because I am holy.'"</strong></p>
+				</a>
 			</blockquote>
 			<p>
 				Our platform is designed to support Christians in aligning their daily lives with their faith.
@@ -299,5 +273,53 @@
 			<br> John 1:1-5</span>
 	</p>
 </body>
+<script>
+	document.getElementById('form').addEventListener('submit', function (event) {
+		event.preventDefault();
+
+		const username = document.getElementById('username').value;
+		const password = document.getElementById('password').value;
+		const city = document.getElementById('city').value;
+		const province = document.getElementById('province').value;
+		const postalcode = document.getElementById('postalcode').value;
+		const country = document.getElementById('country').value;
+
+		localStorage.setItem('userName', username);
+		localStorage.setItem('password', password);
+		localStorage.setItem('city', city);
+		localStorage.setItem('province', province);
+		localStorage.setItem('postalcode', postalcode);
+		localStorage.setItem('country', country);
+
+		alert('name and password saved');
+		document.getElementById("registerModal").style.display = "none";
+
+	})
+
+	function openAboutModal() {
+		document.getElementById("aboutModal").style.display = "block";
+	}
+	function closeAboutModal() {
+		document.getElementById("aboutModal").style.display = "none";
+	}
+
+	//Open Register modal
+
+	function openRegisterModal() {
+		document.getElementById("registerModal").style.display = "flex";
+	}
+
+
+	function closeRegisterModal() {
+		document.getElementById("registerModal").style.display = "none";
+	}
+
+	//Hearing the messagem of Top_frame
+	window.addEventListener('message', function (event) {
+		if (event.data === 'openRegisterModal') {
+			openRegisterModal();
+		}
+	})
+</script>
 
 </html>
