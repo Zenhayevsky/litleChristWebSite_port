@@ -73,8 +73,6 @@
 		}
 
 		.welcomeBg {
-			/* background: url("../images/cruzBackground.jpg");
-    background-repeat: no-repeat; */
 			background-size: cover;
 			height: 100vh;
 			margin: 0;
@@ -98,7 +96,6 @@
 			margin: 10px 20px 0px 20px;
 			text-align: left;
 		}
-
 	</style>
 </head>
 
@@ -228,7 +225,8 @@
 		Explore the image!
 	</span>
 	<div style="position:absolute; margin-top: 450px; margin-left: 180px; " class="versDiv">
-		<button style="cursor: pointer; border-radius: 8px; background-color: orangered; border:none" onclick="openVerseModal()">A word for you today!</button>
+		<button style="cursor: pointer; border-radius: 8px; background-color: orangered; border:none"
+			onclick="openVerseModal()">A word for you today!</button>
 	</div>
 
 
@@ -301,19 +299,17 @@
 	});
 
 	const verse = [
-		'verseShowedAnd after that, the children of Israel will come back and go in search of the Lord their God and David their king; and they will come in fear to the Lord and to his mercies in the days to come. \n Oséias 3: 5',
-		'Because to everyone who makes a request, it will be given; and he who is searching will get his desire, and to him who gives the sign, the door will be open. \nMateus 7:8',
-		'Whoever has the Son has life; whoever does not have the Son of God does not have life. \n1 John 5:12',
-		'This is what the Lord says to Israel: “Seek me and live.” \nAmos 5:4',
-		'But I will sing of your strength, in the morning I will sing of your love; for you are my fortress, my refuge in times of trouble.\n Psalm 59:16',
-		'And my God will meet all your needs according to the riches of his glory in Christ Jesus. \nPhilippians 4:19',
-		'I will give thanks to you, Lord, with all my heart; I will tell of all your wonderful deeds. \nPsalm 9:1',
-		'Whoever believes in him is not condemned, but whoever does not believe stands condemned already because they have not believed in the name of God’s one and only Son. \nJohn 3:18',
-		'Your beauty should not come from outward adornment, such as elaborate hairstyles and the wearing of gold jewelry or fine clothes. Rather, it should be that of your inner self, the unfading beauty of a gentle and quiet spirit, which is of great worth in God’s sight.\n1 Peter 3:3-4',
-		'Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us. \nHebrews 12:1'
+		'verseShowedAnd after that, the children of Israel will come back and go in search of the Lord their God and David their king; and they will come in fear to the Lord and to his mercies in the days to come. \n\n Oséias 3: 5',
+		'Because to everyone who makes a request, it will be given; and he who is searching will get his desire, and to him who gives the sign, the door will be open. \n\nMateus 7:8',
+		'Whoever has the Son has life; whoever does not have the Son of God does not have life. \n\n 1 John 5:12',
+		'This is what the Lord says to Israel: “Seek me and live.” \n\n Amos 5:4',
+		'But I will sing of your strength, in the morning I will sing of your love; for you are my fortress, my refuge in times of trouble.\n\n  Psalm 59:16',
+		'And my God will meet all your needs according to the riches of his glory in Christ Jesus. \n\n Philippians 4:19',
+		'I will give thanks to you, Lord, with all my heart; I will tell of all your wonderful deeds. \n\n Psalm 9:1',
+		'Whoever believes in him is not condemned, but whoever does not believe stands condemned already because they have not believed in the name of God’s one and only Son. \n\n John 3:18',
+		'Your beauty should not come from outward adornment, such as elaborate hairstyles and the wearing of gold jewelry or fine clothes. Rather, it should be that of your inner self, the unfading beauty of a gentle and quiet spirit, which is of great worth in God’s sight.\n\n  1 Peter 3:3-4',
+		'Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us. \n\n Hebrews 12:1'
 	]
-
-	const randonVerse = verse[Math.floor(Math.random() * verse.length)];
 
 	function openAboutModal() {
 		document.getElementById("aboutModal").style.display = "block";
@@ -321,6 +317,7 @@
 
 	function openVerseModal() {
 		document.getElementById("verseModal").style.display = "block";
+		const randonVerse = verse[Math.floor(Math.random() * verse.length)];
 		document.getElementById("verseShowed").innerHTML = randonVerse;
 	}
 
