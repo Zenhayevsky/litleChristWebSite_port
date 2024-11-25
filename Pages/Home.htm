@@ -3,14 +3,14 @@
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
-<!-- <link rel="stylesheet" href="../globlaCss/pages.css"> -->
-<link rel="stylesheet" href="../globlaCss/modal.css">
 
 <head>
 	<!-- Zenhayevsky Carolina Solorzano Acevedo
       Description: Christian influencers social networks
 	  Date: 2024-11-07                -->
 	<title>Home</title>
+	<!-- <link rel="stylesheet" href="../globlaCss/pages.css"> -->
+	<link rel="stylesheet" href="../globlaCss/modal.css" />
 	<style type="text/css">
 		.globe-container {
 			display: flex;
@@ -101,7 +101,8 @@
 
 <body class="welcomeBg">
 	<h2> How to be a little Christ</h2>
-	<p style="align-self: self-end; margin-left: 0px; margin-right: 70%; color:#cdbe82; position: absolute; ">Time spent in this page: <span id="time-spent">0</span> segundos</p>
+	<p style="align-self: self-end; margin-left: 0px; margin-right: 70%; color:#cdbe82; position: absolute; ">Time spent
+		in this page: <span id="time-spent">0</span> segundos</p>
 
 	<!-- Modal Register -->
 	<div id="registerModal" class="modal">
@@ -115,10 +116,10 @@
 					<fieldset style="background-color: #cdbe82;">
 						<legend style="color: #584d52;">Your new account</legend>
 						<label for="username">username: </label>
-						<input required type="text" id="username" name="username" size="6" maxlength="8">
+						<input type="text" id="username" name="username" size="6" maxlength="8" required />
 						<label for="password">Password: </label>
-						<input required type="text" id="password" name="password" size="6" maxlength="8">
-						<br>
+						<input type="text" id="password" name="password" size="6" maxlength="8" required/>
+						<br />
 					</fieldset>
 					<fieldset style="background-color: #F2DFBB">
 						<legend style="color: #635a4b">User data</legend>
@@ -126,25 +127,25 @@
 						<div id="userData">
 							<div id="leftsideForm">
 								<label for="psw">city: </label>
-								<input type="text" id="city" name="city" size="6" maxlength="10">
-								<br>
-								<br>
+								<input type="text" id="city" name="city" size="6" maxlength="10" />
+								<br />
+								<br />
 								<label for="gender">Gender: </label>
-								<br>
-								<br>
-								<input type="radio" name="gender" value="male">Male<br>
-								<input type="radio" name="gender" value="female">Female<br>
+								<br />
+								<br />
+								<input type="radio" name="gender" value="male" />Male<br />
+								<input type="radio" name="gender" value="female" />Female<br />
 							</div>
 							<div id="rightsideForm">
 
 								<label for="province">State/Province: </label>
-								<input type="text" id="province" name="province" size="3" maxlength="20">
-								<br>
-								<br>
+								<input type="text" id="province" name="province" size="3" maxlength="20" />
+								<br />
+								<br />
 								<label for="postalcode">Postal Code: </label>
-								<input type="text" id="postalcode" name="postalcode" size="7" maxlength="7">
-								<br>
-								<br>
+								<input type="text" id="postalcode" name="postalcode" size="7" maxlength="7" />
+								<br />
+								<br />
 								<label for="country">Contry: </label>
 								<select name="country" id="country">
 									<option value="Canada">Canada</option>
@@ -152,19 +153,19 @@
 								</select>
 							</div>
 						</div>
-						<br>
-						<br>
+						<br />
+						<br />
 
 					</fieldset>
 
-					<br>
+					<br />
 
 					<input
 						style=" margin-left:10px; float:left;cursor: pointer; border-radius: 5px; border: none; padding:2px;padding: 8px; background-color: aquamarine;"
-						type="submit" value="Submit">
+						type="submit" value="Submit" onclick="validateForm()" />
 					<input
 						style=" margin-right:10px; float:right;cursor: pointer; width: 50px; border-radius: 5px; border: none; padding: 8px;"
-						type="reset" value="Reset">
+						type="reset" value="Reset" />
 				</form>
 			</div>
 		</div>
@@ -188,17 +189,19 @@
 			<p>"Little Christ" was created for those who seek to cultivate a healthy and organized Christian lifestyle,
 				drawing inspiration from the teachings of Christ. Guided by the principles found in 1 Corinthians 11:1
 				and 1 Peter 1:15-16
+			</p>
 			<blockquote>
-				<a href="https://www.biblegateway.com/passage/?search=1%20Corinthians%2011:1&version=NLT#:~:text=1%20Corinthians%2011%3A1%20New%20Living%20Translation%2011%201,should%20imitate%20me%2C%20just%20as%20I%20imitate%20Christ."
+				<a href="https://www.biblegateway.com/passage/?search=1%20Corinthians%2011:1&amp;version=NLT#:~:text=1%20Corinthians%2011%3A1%20New%20Living%20Translation%2011%201,should%20imitate%20me%2C%20just%20as%20I%20imitate%20Christ."
 					target="_blank">
-					<p><strong> 1 Corinthians 11:1 - "Follow my example, as I follow the example of Christ"</strong></p>
+					<strong> 1 Corinthians 11:1 - "Follow my example, as I follow the example of Christ"</strong>
 				</a>
 				<a href="https://www.biblestudytools.com/1-peter/passage/?q=1+peter+1:15-25#:~:text=1%20Peter%201%3A15-25%2015%20But%20just%20as%20he,your%20time%20as%20foreigners%20here%20in%20reverent%20fear."
 					target="_blank">
 
-					<p><strong> 1 Pedro 1:15 - "But just as he who called you is holy, so be holy in all you do; for it
-							is
-							written: 'Be holy, because I am holy.'"</strong></p>
+					<strong> 1 Pedro 1:15 - "But just as he who called you is holy, so be holy in all you do; for it
+						is
+						written: 'Be holy, because I am holy.'"
+					</strong>
 				</a>
 			</blockquote>
 			<p>
@@ -216,9 +219,7 @@
 		<button class="globe-button" onclick="openAboutModal()">About Us</button>
 	</div>
 	<iframe width="250" height="215" src="https://www.youtube.com/embed/YUV_RB--6zQ?si=LdaM_s6Xj1Mt7jFY"
-		title="my video" framerborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pinture"
-		allowfullscreen>
+		title="my video" frameborder="0">
 	</iframe>
 
 	<span
@@ -232,148 +233,160 @@
 
 
 	<!-- Image Map Generated by http://www.image-map.net/ -->
-	<img src="../images/cruzBackground.jpg" class="mappedImage" usemap="#image-map">
+	<img src="../images/cruzBackground.jpg" class="mappedImage" usemap="#image-map" alt="cross-image" />
 
 
-	<map name="image-map">
+	<map name="image-map" id="image-map">
 		<area target="_blank" alt="The Cruz Mystery" title="The Cruz Mystery"
 			href="https://www.pelagia.org/the-mystery-of-the-cross-according-to-the-apostle-paul.en.aspx"
 			coords="276,169,275,158,311,158,311,122,320,122,320,160,354,158,354,168,321,170,321,231,310,235,311,170"
-			shape="poly">
+			shape="poly" />
 		<area target="_blank" alt="the way, the truth, and the life" title="the way, the truth, and the life"
 			href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=video&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiOgp2XkM2JAxUeElkFHffpLx0QuAJ6BAgHEAU&amp;url=https%3A%2F%2Fwww.facebook.com%2FBillyGrahamLibrary%2Fvideos%2Fjesus-said-to-him-i-am-the-way-the-truth-and-the-life-no-one-comes-to-the-father%2F936233751072323%2F&amp;usg=AOvVaw169Xn8oaTyhJcSyC9BFcRM&amp;opi=89978449"
 			coords="132,300,155,236,145,212,151,198,157,181,155,172,149,166,150,155,160,148,162,134,170,130,183,134,199,123,203,118,206,125,220,116,219,105,222,97,229,93,228,77,224,62,227,52,236,45,241,38,247,28,260,27,270,28,271,12,287,6,294,18,302,16,318,4,333,4,338,17,346,23,352,20,360,21,365,31,379,32,387,31,390,42,392,50,395,56,402,58,403,67,409,73,416,64,424,59,432,60,432,70,432,76,436,81,444,82,446,90,453,90,462,90,464,98,448,97,444,102,432,104,428,111,426,118,430,124,438,128,446,129,447,135,452,142,453,148,455,154,459,163,459,169,455,178,453,186,456,191,462,198,466,204,470,211,466,215,470,222,468,231,468,240,475,251,476,256,478,268,475,286,477,297,476,305,478,315,489,311,506,314,526,311,551,312,566,306,574,282,586,248,590,208,587,157,578,133,563,110,548,96,530,84,494,68,464,54,438,40,405,25,395,9,366,5,340,0,306,-1,272,2,240,17,212,31,190,41,164,51,152,64,126,77,116,84,89,106,73,127,66,153,62,175,56,214,54,254,54,294,56,305,62,311,63,320,71,330,110,315"
-			shape="poly">
+			shape="poly" />
 		<area target="_blank" alt="heirs—heirs of God" title="heirs—heirs of God"
 			href="https://rcg.org/worldtocome/play?v=l75onQXLHXY&amp;gclid=Cj0KCQiAire5BhCNARIsAM53K1gUtNukVCbBg7oJ78S6f9yslGEmSYMQJ34EbzaI6zM97LrT1nwDdb8aAjUJEALw_wcB"
 			coords="252,197,223,201,191,196,168,199,159,198,159,181,155,169,155,159,164,146,169,141,179,139,190,139,196,134,206,131,217,129,222,123,226,113,229,98,238,92,235,83,231,77,234,51,253,36,269,32,277,23,285,18,293,25,302,23,314,15,319,10,328,9,334,21,336,29,346,29,352,27,362,37,373,38,384,40,386,53,395,66,402,73,413,74,422,70,429,65,429,75,437,88,441,95,437,99,424,117,429,126,435,130,441,133,448,149,454,163,453,177,451,189,458,195,464,204,441,200,428,199,445,201,453,202,446,205,398,194,385,192,441,200,373,191,376,165,371,145,357,123,342,114,320,106,299,109,281,122,269,127,255,159,250,181,252,168,261,147,265,141"
-			shape="poly">
+			shape="poly" />
 		<area target="_blank" alt="I am the light of the world" title="I am the light of the world"
 			href="https://www.youtube.com/watch?v=tM4mjTK2IfM"
 			coords="180,282,198,274,223,266,238,257,257,251,274,243,283,239,291,224,300,225,306,225,307,209,307,194,306,181,305,173,286,173,276,173,274,163,274,154,281,156,288,156,300,157,309,157,309,142,309,127,311,119,317,121,322,121,324,130,323,144,322,156,357,157,358,165,354,170,341,172,327,173,322,182,322,192,322,205,323,217,328,204,336,206,340,214,346,218,350,224,361,233,376,247,400,266,426,277,440,281,454,283,464,290,471,290,472,270,470,259,464,248,464,234,464,222,460,213,454,207,428,203,409,199,389,195,377,194,368,193,371,181,372,171,371,157,363,139,353,124,339,114,322,109,304,109,292,117,277,127,270,132,267,145,264,161,260,174,256,187,253,202,244,202,235,203,224,203,212,201,196,200,182,199,172,205,160,204,155,208,154,217,160,235,158,246,156,263,158,271,162,278,170,282"
-			shape="poly">
+			shape="poly" />
 		<area target="_blank" alt="Who may ascend the mountain of the Lord?"
 			title="Who may ascend the mountain of the Lord?" href="https://www.youtube.com/watch?v=ARwhRMDg6-o"
 			coords="164,284,196,283,214,278,231,268,249,261,268,254,276,248,303,240,319,237,330,230,342,226,353,241,358,246,370,252,379,264,386,267,398,276,407,279,421,289,431,293,443,288,456,295,465,298,469,304,447,299,432,309,427,315,394,318,349,319,320,317,276,320,240,326,214,324,191,324,172,326,152,324,150,304,152,290"
-			shape="poly">
+			shape="poly" />
 		<area target="_blank" alt="Truly I tell you, today you will be with me in paradise."
 			title="Truly I tell you, today you will be with me in paradise."
 			href="https://www.youtube.com/watch?v=XnU1KIbt60o" coords="332,225,324,229,325,218,328,210,334,210,340,220"
-			shape="poly">
+			shape="poly" />
 		<area target="_blank" alt="Truly I tell you, today you will be with me in paradise."
 			title="Truly I tell you, today you will be with me in paradise."
 			href="https://www.youtube.com/watch?v=XnU1KIbt60o" coords="286,241,295,239,302,234,297,228,291,226,287,234"
-			shape="poly">
+			shape="poly" />
 	</map>
 	<p
 		style="margin-top:50px; color: aliceblue; position: absolute; width: 500px; text-justify:inherit; text-align: center; align-self: self-start; margin-left: 0px; margin-right: 60% ">
-		In the beginning was the Word, and the Word was with God,<br><br>
-		and the Word was God. The same was in the beginning with God. <br><br>
-		All things were made through him. Without him, nothing was made <br><br>
-		that has been made. In him was life, and the life was the light of men. <br><br>
-		The light shines in the darkness, <br><br> <span style="color: rgb(238, 75, 26)"><b> and the darkness hasn’t
+		In the beginning was the Word, and the Word was with God,<br /><br />
+		and the Word was God. The same was in the beginning with God. <br /><br />
+		All things were made through him. Without him, nothing was made <br /><br />
+		that has been made. In him was life, and the life was the light of men. <br /><br />
+		The light shines in the darkness, <br /><br /> <span style="color: rgb(238, 75, 26)"><b> and the darkness hasn’t
 				overcome it. </b>
-			<br> John 1:1-5</span>
+			<br /> John 1:1-5</span>
 	</p>
-</body>
-<script>
-	document.getElementById('form').addEventListener('submit', function (event) {
-		event.preventDefault();
-		const username = document.getElementById('username').value;
-		const password = document.getElementById('password').value;
-		const city = document.getElementById('city').value;
-		const province = document.getElementById('province').value;
-		const postalcode = document.getElementById('postalcode').value;
-		const country = document.getElementById('country').value;
 
-		localStorage.setItem('userName', username);
-		localStorage.setItem('password', password);
-		localStorage.setItem('city', city);
-		localStorage.setItem('province', province);
-		localStorage.setItem('postalcode', postalcode);
-		localStorage.setItem('country', country);
+	<script type="text/javascript">
+		document.getElementById('form').addEventListener('submit', function (event) {
+			event.preventDefault();
+			const username = document.getElementById('username').value;
+			const password = document.getElementById('password').value;
+			const city = document.getElementById('city').value;
+			const province = document.getElementById('province').value;
+			const postalcode = document.getElementById('postalcode').value;
+			const country = document.getElementById('country').value;
 
-		alert('name and password saved');
-		document.getElementById("registerModal").style.display = "none";
+			localStorage.setItem('userName', username);
+			localStorage.setItem('password', password);
+			localStorage.setItem('city', city);
+			localStorage.setItem('province', province);
+			localStorage.setItem('postalcode', postalcode);
+			localStorage.setItem('country', country);
 
-	});
+			alert('name and password saved');
+			document.getElementById("registerModal").style.display = "none";
 
-	const verse = [
-		'verseShowedAnd after that, the children of Israel will come back and go in search of the Lord their God and David their king; and they will come in fear to the Lord and to his mercies in the days to come. \n\n Oséias 3: 5',
-		'Because to everyone who makes a request, it will be given; and he who is searching will get his desire, and to him who gives the sign, the door will be open. \n\nMateus 7:8',
-		'Whoever has the Son has life; whoever does not have the Son of God does not have life. \n\n1 John 5:12',
-		'This is what the Lord says to Israel: “Seek me and live.” \n\nAmos 5:4',
-		'But I will sing of your strength, in the morning I will sing of your love; for you are my fortress, my refuge in times of trouble.\n\nPsalm 59:16',
-		'And my God will meet all your needs according to the riches of his glory in Christ Jesus. \n\nPhilippians 4:19',
-		'I will give thanks to you, Lord, with all my heart; I will tell of all your wonderful deeds. \n\nPsalm 9:1',
-		'Whoever believes in him is not condemned, but whoever does not believe stands condemned already because they have not believed in the name of God’s one and only Son. \n\nJohn 3:18',
-		'Your beauty should not come from outward adornment, such as elaborate hairstyles and the wearing of gold jewelry or fine clothes. Rather, it should be that of your inner self, the unfading beauty of a gentle and quiet spirit, which is of great worth in God’s sight.\n\n1 Peter 3:3-4',
-		'Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us. \n\nHebrews 12:1',
-		'It is the Lord your God you must follow, and him you must revere. Keep his commands and obey him; serve him and hold fast to him. \n\nDeuteronomy 13:4',
-		'Blessed are you when people hate you, when they exclude you and insult you and reject your name as evil,because of the Son of Man. \n\nLuke 6:22',
-		'There are six days when you may work, but the seventh day is a day of sabbath rest, a day of sacred assembly. You are not to do any work; wherever you live, it is a sabbath to the Lord. \n\nLeviticus 23:3',
-		'So that I may come to you with joy, by God’s will, and in your company be refreshed. \n\nRomans 15:32',
-		'God sets the lonely in families, he leads out the prisoners with singing; but the rebellious live in a sun-scorched land. \n\nPsalm 68:6',
-		'But since sexual immorality is occurring, each man should have sexual relations with his own wife, and each woman with her own husband.\n\n1 Corinthians 7:2',
-		'Great peace have those who love your law, and nothing can make them stumble.\n\nPsalm 119:165',
-		'Whoever conceals their sins does not prosper, but the one who confesses and renounces them finds mercy.\n\nProverbs 28:13',
-		'For the Lord himself will come down from heaven, with a loud command, with the voice of the archangel and with the trumpet call of God, and the dead in Christ will rise first. After that, we who are still alive and are left will be caught up together with them in the clouds to meet the Lord in the air. And so we will be with the Lord forever.\n\n1 Thessalonians 4:16-17',
-		'Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you because of me.\n\nMatthew 5:11',
-		'He must become greater; I must become less. \n\nJohn 3:30',
-		'What is mankind that you are mindful of them,human beings that you care for them? \n\nPsalm 8:4',
-		'Honor the Lord with your wealth,with the firstfruits of all your crops. \n\nProverbs 3:9',
-		'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary,they will walk and not be faint.\n\nIsaiah 40:31',
-		'Finally, be strong in the Lord and in his mighty power.\n\nEphesians 6:10','I am the true vine, and my Father is the gardener. He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful.\n\nJohn 15:1-2',
-		'The angel said to the women, “Do not be afraid, for I know that you are looking for Jesus, who was crucified. He is not here; he has risen, just as he said. Come and see the place where he lay.”\n\nMatthew 28:5-6',
-		'I am the Lord, the God of all mankind. Is anything too hard for me?\n\nJeremiah 32:27',
-		'Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them. \n\nMatthew 5:17',
-		'A gift opens the way and ushers the giver into the presence of the great.\n\nProverbs 18:16',
-		'I know that my redeemer lives, and that in the end he will stand on the earth.\n\nJob 19:25'
-	]
+		});
 
-	function openAboutModal() {
-		document.getElementById("aboutModal").style.display = "block";
-	}
+		const verse = [
+			'verseShowedAnd after that, the children of Israel will come back and go in search of the Lord their God and David their king; and they will come in fear to the Lord and to his mercies in the days to come. \n\n Oséias 3: 5',
+			'Because to everyone who makes a request, it will be given; and he who is searching will get his desire, and to him who gives the sign, the door will be open. \n\nMateus 7:8',
+			'Whoever has the Son has life; whoever does not have the Son of God does not have life. \n\n1 John 5:12',
+			'This is what the Lord says to Israel: “Seek me and live.” \n\nAmos 5:4',
+			'But I will sing of your strength, in the morning I will sing of your love; for you are my fortress, my refuge in times of trouble.\n\nPsalm 59:16',
+			'And my God will meet all your needs according to the riches of his glory in Christ Jesus. \n\nPhilippians 4:19',
+			'I will give thanks to you, Lord, with all my heart; I will tell of all your wonderful deeds. \n\nPsalm 9:1',
+			'Whoever believes in him is not condemned, but whoever does not believe stands condemned already because they have not believed in the name of God’s one and only Son. \n\nJohn 3:18',
+			'Your beauty should not come from outward adornment, such as elaborate hairstyles and the wearing of gold jewelry or fine clothes. Rather, it should be that of your inner self, the unfading beauty of a gentle and quiet spirit, which is of great worth in God’s sight.\n\n1 Peter 3:3-4',
+			'Therefore, since we are surrounded by such a great cloud of witnesses, let us throw off everything that hinders and the sin that so easily entangles. And let us run with perseverance the race marked out for us. \n\nHebrews 12:1',
+			'It is the Lord your God you must follow, and him you must revere. Keep his commands and obey him; serve him and hold fast to him. \n\nDeuteronomy 13:4',
+			'Blessed are you when people hate you, when they exclude you and insult you and reject your name as evil,because of the Son of Man. \n\nLuke 6:22',
+			'There are six days when you may work, but the seventh day is a day of sabbath rest, a day of sacred assembly. You are not to do any work; wherever you live, it is a sabbath to the Lord. \n\nLeviticus 23:3',
+			'So that I may come to you with joy, by God’s will, and in your company be refreshed. \n\nRomans 15:32',
+			'God sets the lonely in families, he leads out the prisoners with singing; but the rebellious live in a sun-scorched land. \n\nPsalm 68:6',
+			'But since sexual immorality is occurring, each man should have sexual relations with his own wife, and each woman with her own husband.\n\n1 Corinthians 7:2',
+			'Great peace have those who love your law, and nothing can make them stumble.\n\nPsalm 119:165',
+			'Whoever conceals their sins does not prosper, but the one who confesses and renounces them finds mercy.\n\nProverbs 28:13',
+			'For the Lord himself will come down from heaven, with a loud command, with the voice of the archangel and with the trumpet call of God, and the dead in Christ will rise first. After that, we who are still alive and are left will be caught up together with them in the clouds to meet the Lord in the air. And so we will be with the Lord forever.\n\n1 Thessalonians 4:16-17',
+			'Blessed are you when people insult you, persecute you and falsely say all kinds of evil against you because of me.\n\nMatthew 5:11',
+			'He must become greater; I must become less. \n\nJohn 3:30',
+			'What is mankind that you are mindful of them,human beings that you care for them? \n\nPsalm 8:4',
+			'Honor the Lord with your wealth,with the firstfruits of all your crops. \n\nProverbs 3:9',
+			'But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary,they will walk and not be faint.\n\nIsaiah 40:31',
+			'Finally, be strong in the Lord and in his mighty power.\n\nEphesians 6:10', 'I am the true vine, and my Father is the gardener. He cuts off every branch in me that bears no fruit, while every branch that does bear fruit he prunes so that it will be even more fruitful.\n\nJohn 15:1-2',
+			'The angel said to the women, “Do not be afraid, for I know that you are looking for Jesus, who was crucified. He is not here; he has risen, just as he said. Come and see the place where he lay.”\n\nMatthew 28:5-6',
+			'I am the Lord, the God of all mankind. Is anything too hard for me?\n\nJeremiah 32:27',
+			'Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them. \n\nMatthew 5:17',
+			'A gift opens the way and ushers the giver into the presence of the great.\n\nProverbs 18:16',
+			'I know that my redeemer lives, and that in the end he will stand on the earth.\n\nJob 19:25'
+		]
 
-	function openVerseModal() {
-		document.getElementById("verseModal").style.display = "block";
-		const randonVerse = verse[Math.floor(Math.random() * verse.length)];
-		document.getElementById("verseShowed").innerHTML = randonVerse;
-	}
-
-
-	function closeAboutModal() {
-		document.getElementById("aboutModal").style.display = "none";
-	}
-	function closeVerseModal() {
-		document.getElementById("verseModal").style.display = "none";
-	}
-
-	//Open Register modal
-
-	function openRegisterModal() {
-		document.getElementById("registerModal").style.display = "flex";
-	};
-
-
-	function closeRegisterModal() {
-		document.getElementById("registerModal").style.display = "none";
-	};
-
-	//Hearing the messagem of Top_frame
-	window.addEventListener('message', function (event) {
-		if (event.data === 'openRegisterModal') {
-			openRegisterModal();
+		function openAboutModal() {
+			document.getElementById("aboutModal").style.display = "block";
 		}
-	});
 
-	let startTime = Date.now();
+		function openVerseModal() {
+			document.getElementById("verseModal").style.display = "block";
+			const randonVerse = verse[Math.floor(Math.random() * verse.length)];
+			document.getElementById("verseShowed").innerHTML = randonVerse;
+		}
 
-	setInterval(() => {
-		let currentTime = Date.now();
-		let timeSpent = Math.floor((currentTime - startTime) / 1000);
-		document.getElementById("time-spent").textContent = timeSpent;
-	}, 1000);
-</script>
+
+		function closeAboutModal() {
+			document.getElementById("aboutModal").style.display = "none";
+		}
+		function closeVerseModal() {
+			document.getElementById("verseModal").style.display = "none";
+		}
+
+		//Open Register modal
+
+		function openRegisterModal() {
+			document.getElementById("registerModal").style.display = "flex";
+		};
+
+
+		function closeRegisterModal() {
+			document.getElementById("registerModal").style.display = "none";
+		};
+
+		//Hearing the messagem of Top_frame
+		window.addEventListener('message', function (event) {
+			if (event.data === 'openRegisterModal') {
+				openRegisterModal();
+			}
+		});
+
+		let startTime = Date.now();
+
+		setInterval(() => {
+			let currentTime = Date.now();
+			let timeSpent = Math.floor((currentTime - startTime) / 1000);
+			document.getElementById("time-spent").textContent = timeSpent;
+		}, 1000);
+
+		function validateForm() {
+			const username = document.getElementById('username').value;
+			if (!username) {
+				alert('Username is required!');
+				return false;
+			}
+
+			document.forms['form1'].submit();
+		}
+	</script>
+
+</body>
 
 </html>

@@ -3,13 +3,13 @@
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
-<link rel="stylesheet" href="../globlaCss/pages.css">
 
 <head>
     <!-- Zenhayevsky Carolina Solorzano Acevedo
       Description: Christian influencers social networks
 	  Date: 2024-11-07                -->
     <title>Seach disciples and Gifts of the Holy spirit</title>
+    <link rel="stylesheet" href="../globlaCss/pages.css"/>
     <style type="text/css">
         .error-message {
             color: red;
@@ -57,11 +57,11 @@
 <body class="welcomeBg">
 
     <div class="floatingDiv">
-        <h1 style="color: rgb(3, 48, 40);">The 12 disciples of Jesus Christ and the <br> 7 gifts of the holy spirit in the little christ beliver</h1>
+        <h1 style="color: rgb(3, 48, 40);">The 12 disciples of Jesus Christ and the <br/> 7 gifts of the holy spirit in the little christ beliver</h1>
 
         <div class="search-container">
             <label for="keyword">Search for a disciple or a gift of the holy spirit: </label>
-            <input type="text" id="keyword" placeholder="Type the name of a disciple or a gift">
+            <input type="text" id="keyword" />
             <button onclick="searchKeyword()">Search</button>
         </div>
 
@@ -69,7 +69,9 @@
 
         <div class="error-message" id="error-message" style="display:none">
             <p class="keyword-list">keyword not found. here are the valid keywords:</p>
-            <ul class="keyword-list" id="keyword-list"></ul>
+            <ul class="keyword-list" id="keyword-list">
+             <li></li>
+            </ul>
         </div>
 
         <div class="separator"></div>
@@ -78,8 +80,8 @@
 
         <div class="pageIdentifier">Search</div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
 
         //Array with the 12 disciples and the 7 gifts of the holy spirit
 
@@ -123,8 +125,8 @@
             // show results or error message
             if (foundKeyword.length > 0) {
                 foundKeyword.forEach(item => {
-                    const infoDiv = document.createElement('Div');
-                    infoDiv.innerHTML = `<h3>${item.name}</h3><p>${item.info}</p>`;
+                    const infoDiv = document.createElement('infoDiv');
+                    infoDiv.innerHTML = `<div><h3>${item.name}</h3><p>${item.info}</p></div>`;
                     resultContainer.appendChild(infoDiv);
                 });
 

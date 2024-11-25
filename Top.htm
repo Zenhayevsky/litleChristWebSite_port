@@ -8,7 +8,6 @@
       Description: Christian influencers social networks
 	  Date: 2024-11-07                -->
 	<title>Top Page</title>
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 	<style type="text/css">
 		body {
 			background-color: #000000;
@@ -85,10 +84,10 @@
 			padding-right: 10px;
 		}
 	</style>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="JS/jquery-3.6.1.min.js"></script>
 	<script type="text/javascript" src="JS/login.js"></script>
-	<script>
+	<script type="text/javascript" >
 		function register() {
 			parent.frames['Content_Frame'].postMessage('openRegisterModal', '*');
 		}
@@ -102,7 +101,7 @@
 				<h1>Little Christ Life</h1>
 			</td>
 			<td align="right">
-				<form name="form1">
+				<form action="#" name="form1">
 					<table>
 						<tr>
 							<td class="login">User :</td>
@@ -117,7 +116,7 @@
 								&nbsp;&nbsp;
 							</td>
 							<td class="login">
-								<input type="button" id="btnLogin" onClick="authenticate_login()" value="Login" />
+								<input type="button" id="btnLogin" onclick="authenticate_login()" value="Login" />
 							</td>
 						</tr>
 						<tr>
@@ -127,12 +126,12 @@
 						</tr>
 						<tr>
 							<td class="logout">
-								<input type="button" id="btnLogout" onClick="authenticate_logout()" value="Logout" />
+								<input type="button" id="btnLogout" onclick="authenticate_logout()" value="Logout" />
 							</td>
-						<tr>
-							<br />
+						</tr>
 					</table>
-					<input class="login" id="btnRegister" type="button" id="b2" onClick="register()"
+					<br />
+					<input class="login" id="btnRegister" type="button" onclick="register()"
 						value="Register here" />
 				</form>
 			</td>

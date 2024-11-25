@@ -3,13 +3,13 @@
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
-<link rel="stylesheet" href="../globlaCss/pages.css">
 
 <head>
 	<!-- Zenhayevsky Carolina Solorzano Acevedo
       Description: Christian influencers social networks
 	  Date: 2024-11-07                -->
 	<title>My Data</title>
+	<link rel="stylesheet" href="../globlaCss/pages.css"/>
 	<style type="text/css">
 	</style>
 </head>
@@ -37,22 +37,23 @@
 		</div>
 		<div class="pageIdentifier">My data</div>
 	</div>
+	<script type="text/javascript">
+		let username2 = localStorage.getItem("userName");
+		const password = localStorage.getItem('password');
+		const city = localStorage.getItem('city');
+		const province = localStorage.getItem('province');
+		const postalcode = localStorage.getItem('postalcode');
+		const country = localStorage.getItem('country');
+	
+		document.getElementById('username').innerHTML = localStorage.getItem("userName");
+		document.getElementById('password').innerHTML = password;
+		document.getElementById('city').innerHTML = city;
+		document.getElementById('province').innerHTML = province;
+		document.getElementById('postalcode').innerHTML = postalcode;
+		document.getElementById('country').innerHTML = country;
+	
+	</script>
+	
 </body>
-<script>
-	let username2 = localStorage.getItem("userName");
-	const password = localStorage.getItem('password');
-	const city = localStorage.getItem('city');
-	const province = localStorage.getItem('province');
-	const postalcode = localStorage.getItem('postalcode');
-	const country = localStorage.getItem('country');
-
-	document.getElementById('username').innerHTML = localStorage.getItem("userName");
-	document.getElementById('password').innerHTML = password;
-	document.getElementById('city').innerHTML = city;
-	document.getElementById('province').innerHTML = province;
-	document.getElementById('postalcode').innerHTML = postalcode;
-	document.getElementById('country').innerHTML = country;
-
-</script>
 
 </html>
