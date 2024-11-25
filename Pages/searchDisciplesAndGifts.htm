@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
+<link rel="stylesheet" href="../globlaCss/pages.css">
+
+<head>
+    <!-- Zenhayevsky Carolina Solorzano Acevedo
+      Description: Christian influencers social networks
+	  Date: 2024-11-07                -->
+    <title>Seach disciples and Gifts of the Holy spirit</title>
+    <style type="text/css">
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="welcomeBg">
+
+    <div class="floatingDiv">
+        <h1>The 12 disciples of Jesus Christ</h1>
+
+        <div class="search-container">
+            <label for="keyword">Search for a disciple or a gift of the holy spirit: </label>
+            <input type="text" id="keyword" placeholder="Type the name of a disciple or a gift">
+            <button onclick="searchKeyword()">Search</button>
+        </div>
+
+        <div class="result-Container" id="result"></div>
+
+        <div class="separator"></div>
+
+        <div class="error-message" id="error-message" style="display:none">
+            keyword not found. here are the valid keywords:
+            <ul class="keyword-list" id="keyword-list"></ul>
+        </div>
+
+        <div class="time-stay" id="time-stay"></div>
+        <div class="pageIdentifier">Search</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        //Array with the 12 disciples and the 7 gifts of the holy spirit
+
+        const keywords = [
+            { name: 'Peter', info: "Peter, originally named Simon, was a fisherman and one of Jesus' closest disciples. He is known for his strong faith, yet also for his moments of weakness, such as when he denied Jesus three times. However, he was restored by Christ and became a leading figure in the early church, boldly preaching the gospel and teaching with conviction." },
+            { name: 'James', info: "James, the son of Zebedee, was one of the first followers of Jesus and the brother of John. Along with Peter and John, he witnessed significant events like the Transfiguration of Jesus. James was martyred for his faith and is remembered for his dedication to the gospel." },
+            { name: 'John', info: "John, the brother of James, was known as the 'beloved disciple' and had an especially close relationship with Jesus. He was present at many pivotal moments, such as the crucifixion and resurrection. John also wrote the gospel that bears his name and the letters found in the New Testament, highlighting God's love." },
+            { name: 'Andrew', info: "Andrew, Peter's brother, was one of the first to follow Jesus and immediately shared the good news with his brother. While less mentioned than other disciples, he played an important role as an evangelist, bringing others to Christ as recorded in Scripture." },
+            { name: 'Philip', info: "Philip was directly called by Jesus to follow Him. He was a practical and questioning disciple, and at one point asked Jesus to show the Father to the disciples. Philip is remembered for his eagerness to bring others to Jesus, like when he brought Nathanael to meet Christ." },
+            { name: 'Bartholomew', info: "Bartholomew, also known as Nathanael, was called by Philip to follow Jesus. He is remembered for his sincere reaction when he encountered Jesus, declaring that no one could be like Him. Bartholomew remained faithful in his commitment to Christ and, according to tradition, served as a missionary after Jesus' ascension." },
+            { name: 'Matthew', info: "Matthew, the tax collector, was called by Jesus to follow Him, leaving behind his lucrative job to follow the Master. He wrote the Gospel of Matthew, which focuses on presenting Jesus as the promised Messiah in the Scriptures. His conversion serves as an example of how Jesus reaches out to the lost." },
+            { name: 'Thomas', info: "Thomas, also known as Didymus, is often remembered for his doubt after the resurrection of Jesus, when he initially refused to believe until he saw the marks in Christ's wounds. However, Thomas proclaimed one of the deepest confessions of faith, acknowledging Jesus as 'My Lord and my God.'" },
+            { name: 'James son of Alphaeus', info: "James, the son of Alphaeus, is sometimes referred to as 'James the Less' to distinguish him from the more well-known James, the son of Zebedee. Not much is written about him in the Scriptures, but he is listed among the twelve apostles. He faithfully followed Jesus, and tradition holds that he preached the gospel in various regions after Christ's ascension." },
+            { name: 'Thaddaeus', info: "Thaddaeus, also known as Lebbaeus or Judas the son of James, is another apostle with little direct mention in the Bible. He is known for asking Jesus a question during the Last Supper about why Jesus would reveal Himself only to the disciples and not to the world. Thaddaeus is believed to have carried the message of the gospel to distant lands and preached with devotion." },
+            { name: 'Simon the Zealot', info: "Simon, often called 'the Zealot', was a member of a political movement known for its fervent opposition to Roman rule in Israel. He is mentioned in the lists of the twelve apostles but little else is known about his life or ministry. After Jesus' resurrection, Simon is believed to have spread the gospel, possibly in Persia, and was martyred for his faith." },
+            { name: 'Judas Iscariot', info: "Judas Iscariot is one of the most infamous disciples, known for betraying Jesus to the religious authorities for thirty pieces of silver. His actions led to the arrest of Jesus and His eventual crucifixion. Judas's betrayal and subsequent regret are deeply significant in the narrative of Jesus' passion. After his betrayal, he took his own life, leaving behind a legacy of tragic disobedience." },
+        ]
+
+        // function to look for the keyword
+        function searchKeyword() {
+            const keyword = document.getElementById('keyword').value.toLowerCase();
+            const resultContainer = document.getElementById('result');
+            const errorMessage = document.getElementById('error-message');
+            const keywordList = document.getElementById('keyword-list');
+            const timeStay = document.getElementById('time-stay');
+
+            // clean old results
+            resultContainer.innerHTML = '';
+            errorMessage.style.display = 'none';
+            keywordList.innerHTML = '';
+
+            //verify if the keyword exist
+            const foundKeyword = keywords.filter(k => k.name.toLowerCase().includes(keyword));
+
+            // show results or error message
+            if (foundKeyword.length > 0) {
+                foundKeyword.forEach(item => {
+                    const infoDiv = document.createElement('Div');
+                    infoDiv.innerHTML = `<h3>${item.name}</h3><p>${item.info}</p>`;
+                    resultContainer.appendChild(infoDiv);
+                });
+
+                // save the word in the localstorage
+                let storedKeywords = JSON.parse(localStorage.getItem('searchKeywords')) || [];
+                if (!storedKeywords.includes(keyword)) {
+                    storedKeywords.push(keyword);
+                    localStorage.setItem('searchKeywords', JSON.stringify(storedKeywords));
+                } else {
+                    //if it does not finds it shows an error message
+                    errorMessage.style.display = 'block';
+                    keywords.forEach(k => {
+                        const li = document.createElement('li');
+                        li.textContent = k.name;
+                        keywordList.appendChild(li);
+                    });
+                }
+
+                // show the time of permanance in the page
+                const timeSpent = localStorage.getItem('timeSpent');
+                if (timeSpent) {
+                    timeStay.textContent = `Time spent in this page: ${timeSpent} seconds. `;
+                };
+
+                // calculate the time spent
+                let startTime = Date.now();
+                window.addEventListener('beforeunload', function () {
+                    let timeSpent = Math.floor((Date.now() - startTime) / 1000);
+                    localStorage.setItem('timeSpent', timeSpent);
+                });
+
+                // taking history of keywords
+                const storedKeywordsLocal = JSON.parse(localStorage.getItem('searchKeywords')) || [];
+                console.log('Searched words: ', storedKeywordsLocal);
+            }
+        }
+    </script>
+</body>
+
+</html>

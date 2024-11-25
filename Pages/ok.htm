@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa - Discípulos e Dons do Espírito Santo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+        }
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .result-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+        .keyword-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        .keyword-list li {
+            margin: 5px 0;
+            display: inline-block;
+            padding: 10px;
+            background-color: #ddd;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+        .time-stay {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .separator {
+            margin: 20px 0;
+            border-bottom: 2px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pesquisa sobre Discípulos e Dons do Espírito Santo</h1>
+
+    <div class="search-container">
+        <label for="keyword">Pesquise por um Discípulo ou Dom:</label>
+        <input type="text" id="keyword" placeholder="Digite um discípulo ou dom">
+        <button onclick="searchKeyword()">Pesquisar</button>
+    </div>
+
+    <div class="result-container" id="result">
+        <!-- Aqui os resultados serão exibidos -->
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="error-message" id="error-message" style="display: none;">
+        Palavra-chave não encontrada. Aqui estão as palavras-chave válidas:
+        <ul class="keyword-list" id="keyword-list">
+            <!-- Palavras-chave válidas aparecerão aqui -->
+        </ul>
+    </div>
+
+    <div class="time-stay" id="time-stay">
+        <!-- Aqui será exibido o tempo de permanência na página -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Array com os 12 discípulos e os 7 dons do Espírito Santo
+        const keywords = [
+            { name: 'Pedro', info: 'Discípulo de Jesus, líder dos apóstolos.' },
+            { name: 'Tiago', info: 'Discípulo, irmão de João.' },
+            { name: 'João', info: 'Discípulo amado de Jesus.' },
+            { name: 'André', info: 'Irmão de Pedro, um dos primeiros discípulos.' },
+            { name: 'Filipe', info: 'Um dos 12 apóstolos.' },
+            { name: 'Bartolomeu', info: 'Outro discípulo dos 12.' },
+            { name: 'Mateus', info: 'Evangelista, cobrador de impostos.' },
+            { name: 'Tomé', info: 'Famoso pela dúvida após a ressurreição.' },
+            { name: 'Tiago (filho de Alfeu)', info: 'Discípulo, também conhecido como Tiago Menor.' },
+            { name: 'Tadeu', info: 'Outro discípulo de Jesus.' },
+            { name: 'Simão Zelote', info: 'Discípulo conhecido pela sua dedicação à justiça.' },
+            { name: 'Judas Iscariotes', info: 'O discípulo que traiu Jesus.' },
+            { name: 'Sabedoria', info: 'Dom do Espírito Santo para entender profundamente as coisas divinas.' },
+            { name: 'Entendimento', info: 'Dom que ajuda a perceber o significado das verdades divinas.' },
+            { name: 'Conselho', info: 'Dom para dar boas orientações e tomar decisões sábias.' },
+            { name: 'Fortaleza', info: 'Dom para ter coragem e perseverar nas adversidades.' },
+            { name: 'Ciência', info: 'Dom para compreender a criação e o plano de Deus.' },
+            { name: 'Piedade', info: 'Dom para ter um coração sensível à vontade de Deus.' },
+            { name: 'Temor de Deus', info: 'Dom para reverenciar e respeitar Deus acima de tudo.' }
+        ];
+
+        // Função para pesquisar a palavra-chave
+        function searchKeyword() {
+            const keyword = document.getElementById('keyword').value.toLowerCase();
+            const resultContainer = document.getElementById('result');
+            const errorMessage = document.getElementById('error-message');
+            const keywordList = document.getElementById('keyword-list');
+            const timeStay = document.getElementById('time-stay');
+
+            // Limpar resultados anteriores
+            resultContainer.innerHTML = '';
+            errorMessage.style.display = 'none';
+            keywordList.innerHTML = '';
+
+            // Verificar se a palavra-chave existe no array
+            const foundKeyword = keywords.filter(k => k.name.toLowerCase().includes(keyword));
+
+            // Exibir resultados ou mensagem de erro
+            if (foundKeyword.length > 0) {
+                foundKeyword.forEach(item => {
+                    const infoDiv = document.createElement('div');
+                    infoDiv.innerHTML = `<h3>${item.name}</h3><p>${item.info}</p>`;
+                    resultContainer.appendChild(infoDiv);
+                });
+
+                // Armazenar a palavra-chave no LocalStorage
+                let storedKeywords = JSON.parse(localStorage.getItem('searchKeywords')) || [];
+                if (!storedKeywords.includes(keyword)) {
+                    storedKeywords.push(keyword);
+                    localStorage.setItem('searchKeywords', JSON.stringify(storedKeywords));
+                }
+            } else {
+                // Se não encontrar, exibe mensagem de erro
+                errorMessage.style.display = 'block';
+                keywords.forEach(k => {
+                    const li = document.createElement('li');
+                    li.textContent = k.name;
+                    keywordList.appendChild(li);
+                });
+            }
+
+            // Exibir tempo de permanência na página
+            const timeSpent = localStorage.getItem('timeSpent');
+            if (timeSpent) {
+                timeStay.textContent = `Você passou ${timeSpent} segundos nesta página.`;
+            }
+        }
+
+        // Calcular o tempo de permanência na página
+        let startTime = Date.now();
+        window.addEventListener('beforeunload', function () {
+            let timeSpent = Math.floor((Date.now() - startTime) / 1000);
+            localStorage.setItem('timeSpent', timeSpent);
+        });
+
+        // Carregar o histórico de palavras-chave
+        const storedKeywords = JSON.parse(localStorage.getItem('searchKeywords')) || [];
+        console.log('Palavras-chave pesquisadas:', storedKeywords);
+    </script>
+</body>
+</html>

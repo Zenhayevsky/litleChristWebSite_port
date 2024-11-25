@@ -10,7 +10,7 @@
 	<!-- Zenhayevsky Carolina Solorzano Acevedo
       Description: Christian influencers social networks
 	  Date: 2024-11-07                -->
-	<title>Content Page</title>
+	<title>Home</title>
 	<style type="text/css">
 		.globe-container {
 			display: flex;
@@ -101,6 +101,7 @@
 
 <body class="welcomeBg">
 	<h2> How to be a little Christ</h2>
+	<p style="align-self: self-end; margin-left: 0px; margin-right: 70%; color:#cdbe82; position: absolute; ">Time spent in this page: <span id="time-spent">0</span> segundos</p>
 
 	<!-- Modal Register -->
 	<div id="registerModal" class="modal">
@@ -278,7 +279,6 @@
 <script>
 	document.getElementById('form').addEventListener('submit', function (event) {
 		event.preventDefault();
-
 		const username = document.getElementById('username').value;
 		const password = document.getElementById('password').value;
 		const city = document.getElementById('city').value;
@@ -333,20 +333,27 @@
 
 	function openRegisterModal() {
 		document.getElementById("registerModal").style.display = "flex";
-	}
+	};
 
 
 	function closeRegisterModal() {
 		document.getElementById("registerModal").style.display = "none";
-	}
+	};
 
 	//Hearing the messagem of Top_frame
 	window.addEventListener('message', function (event) {
 		if (event.data === 'openRegisterModal') {
 			openRegisterModal();
 		}
-	})
+	});
 
+	let startTime = Date.now();
+
+	setInterval(() => {
+		let currentTime = Date.now();
+		let timeSpent = Math.floor((currentTime - startTime) / 1000);
+		document.getElementById("time-spent").textContent = timeSpent;
+	}, 1000);
 </script>
 
 </html>

@@ -9,20 +9,44 @@
 	<!-- Zenhayevsky Carolina Solorzano Acevedo
       Description: Christian influencers social networks
 	  Date: 2024-11-07                -->
-	<title>Content Page</title>
+	<title>My Data</title>
 	<style type="text/css">
 	</style>
 </head>
 
-<script>
-	const username = localStorage.getItem('username') ;
-	const password = localStorage.getItem('password') ;
-	const city = localStorage.getItem('city') ; 
-	const province = localStorage.getItem('province') ;
-	const postalcode = localStorage.getItem('postalcode') ; 
-	const country = localStorage.getItem('country') ; 
+<body class="welcomeBg">
+	<div class="floatingDiv">
 
-	document.getElementById('username').innerHTML = username;
+		<div style="color:black">
+			<p>
+				Name : <span id="username"></span>
+			</p>
+
+			<p>
+				password : <span id="password"></span>
+			</p>
+			
+			<p>
+				city : <span id="city"></span>
+			</p>
+
+			<p>
+				country : <span id="country"></span>
+			</p>
+
+		</div>
+		<div class="pageIdentifier">My data</div>
+	</div>
+</body>
+<script>
+	let username2 = localStorage.getItem("userName");
+	const password = localStorage.getItem('password');
+	const city = localStorage.getItem('city');
+	const province = localStorage.getItem('province');
+	const postalcode = localStorage.getItem('postalcode');
+	const country = localStorage.getItem('country');
+
+	document.getElementById('username').innerHTML = localStorage.getItem("userName");
 	document.getElementById('password').innerHTML = password;
 	document.getElementById('city').innerHTML = city;
 	document.getElementById('province').innerHTML = province;
@@ -30,34 +54,5 @@
 	document.getElementById('country').innerHTML = country;
 
 </script>
-<body class="welcomeBg">
-	<div class="floatingDiv">
-
-		<div style="color:black">
-			<p>
-				Name
-			</p>
-			<p id="username"></p>
-	
-			<p>
-				password
-			</p>
-			<p id="password"></p>
-	
-			<p>
-				city
-			</p>
-			<p id="city"></p>
-	
-	
-			<p>
-				country
-			</p>
-			<p id="country"></p>
-			
-		</div>
-		<div class="pageIdentifier">My data</div>
-	</div>
-</body>
 
 </html>
