@@ -15,13 +15,49 @@
             color: red;
             font-weight: bold;
         }
+
+        h1 {
+            text-align: center;
+        }
+
+        .search-container {
+            margin: 40px 0px 0px 0px;
+            text-align: center;
+        }
+
+        .result-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .keyword-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .time-stay {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .separator {
+            margin: 20px 0;
+            border-bottom: 2px solid #064731;
+        }
     </style>
 </head>
 
 <body class="welcomeBg">
 
     <div class="floatingDiv">
-        <h1>The 12 disciples of Jesus Christ</h1>
+        <h1 style="color: rgb(3, 48, 40);">The 12 disciples of Jesus Christ and the <br> 7 gifts of the holy spirit in the little christ beliver</h1>
 
         <div class="search-container">
             <label for="keyword">Search for a disciple or a gift of the holy spirit: </label>
@@ -31,14 +67,15 @@
 
         <div class="result-Container" id="result"></div>
 
-        <div class="separator"></div>
-
         <div class="error-message" id="error-message" style="display:none">
-            keyword not found. here are the valid keywords:
+            <p class="keyword-list">keyword not found. here are the valid keywords:</p>
             <ul class="keyword-list" id="keyword-list"></ul>
         </div>
 
-        <div class="time-stay" id="time-stay"></div>
+        <div class="separator"></div>
+
+        <p style="align-self: self-end; margin-left: 0px; margin-right: 70%; color:#cdbe82; position: absolute; ">Time spent in this page: <span id="time-spent">0</span> segundos</p>
+
         <div class="pageIdentifier">Search</div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -59,6 +96,13 @@
             { name: 'Thaddaeus', info: "Thaddaeus, also known as Lebbaeus or Judas the son of James, is another apostle with little direct mention in the Bible. He is known for asking Jesus a question during the Last Supper about why Jesus would reveal Himself only to the disciples and not to the world. Thaddaeus is believed to have carried the message of the gospel to distant lands and preached with devotion." },
             { name: 'Simon the Zealot', info: "Simon, often called 'the Zealot', was a member of a political movement known for its fervent opposition to Roman rule in Israel. He is mentioned in the lists of the twelve apostles but little else is known about his life or ministry. After Jesus' resurrection, Simon is believed to have spread the gospel, possibly in Persia, and was martyred for his faith." },
             { name: 'Judas Iscariot', info: "Judas Iscariot is one of the most infamous disciples, known for betraying Jesus to the religious authorities for thirty pieces of silver. His actions led to the arrest of Jesus and His eventual crucifixion. Judas's betrayal and subsequent regret are deeply significant in the narrative of Jesus' passion. After his betrayal, he took his own life, leaving behind a legacy of tragic disobedience." },
+            { name: 'Wisdom', info: "The gift of wisdom allows a believer to see life from God's perspective. It enables them to make decisions in alignment with God's will and to understand divine truths that transcend human understanding. Wisdom helps in discerning the deeper meaning of Scripture and applying it to everyday situations."},
+            { name: 'Understanding', info: "This gift allows a person to grasp the meaning of God's teachings and the mysteries of faith. It brings clarity and insight into God's Word, making it easier to understand and live according to His guidance. It empowers the believer to see beyond the surface and comprehend deeper spiritual truths."},
+            { name: 'Counsel ', info: "The gift of counsel helps a believer make prudent decisions in life. It allows them to judge correctly and seek the will of God when faced with difficult choices. This gift provides guidance in moral decisions, helping one to choose what is righteous and pleasing to God."},
+            { name: 'Fortitude', info: "Fortitude gives strength and courage to stand firm in faith, especially during trials and persecution. It empowers a believer to endure hardship for the sake of righteousness and to boldly live out their faith, even in the face of opposition."},
+            { name: 'Knowledge', info: "The gift of knowledge enables a believer to understand the world in light of God's truth. It grants insight into the nature of God, the workings of creation, and the human condition. With this gift, a believer can recognize the true value of things and make choices that honor God."},
+            { name: 'Piety', info: "Piety instills a deep sense of reverence and love for God. It leads to a heart of worship and devotion, cultivating a desire to live in accordance with God's will. This gift also helps to foster a genuine respect for others as children of God."},
+            { name: 'Fear of the Lord', info: "The gift of fear of the Lord is not about being afraid, but about having a profound respect and awe for God's greatness. It fosters humility and a recognition of God's majesty, leading a person to live with a sense of awe and reverence before Him. It encourages a desire to avoid sin out of love and reverence for God."},
         ]
 
         // function to look for the keyword
@@ -67,7 +111,6 @@
             const resultContainer = document.getElementById('result');
             const errorMessage = document.getElementById('error-message');
             const keywordList = document.getElementById('keyword-list');
-            const timeStay = document.getElementById('time-stay');
 
             // clean old results
             resultContainer.innerHTML = '';
@@ -75,7 +118,7 @@
             keywordList.innerHTML = '';
 
             //verify if the keyword exist
-            const foundKeyword = keywords.filter(k => k.name.toLowerCase().includes(keyword));
+            const foundKeyword = keywords.filter(k => k.name.toLowerCase() === keyword);
 
             // show results or error message
             if (foundKeyword.length > 0) {
@@ -90,34 +133,28 @@
                 if (!storedKeywords.includes(keyword)) {
                     storedKeywords.push(keyword);
                     localStorage.setItem('searchKeywords', JSON.stringify(storedKeywords));
-                } else {
-                    //if it does not finds it shows an error message
-                    errorMessage.style.display = 'block';
-                    keywords.forEach(k => {
-                        const li = document.createElement('li');
-                        li.textContent = k.name;
-                        keywordList.appendChild(li);
-                    });
                 }
-
-                // show the time of permanance in the page
-                const timeSpent = localStorage.getItem('timeSpent');
-                if (timeSpent) {
-                    timeStay.textContent = `Time spent in this page: ${timeSpent} seconds. `;
-                };
-
-                // calculate the time spent
-                let startTime = Date.now();
-                window.addEventListener('beforeunload', function () {
-                    let timeSpent = Math.floor((Date.now() - startTime) / 1000);
-                    localStorage.setItem('timeSpent', timeSpent);
-                });
 
                 // taking history of keywords
                 const storedKeywordsLocal = JSON.parse(localStorage.getItem('searchKeywords')) || [];
                 console.log('Searched words: ', storedKeywordsLocal);
+            } else {
+                errorMessage.style.display = 'block';
+                keywords.forEach(k => {
+                    const li = document.createElement('li');
+                    li.textContent = k.name;
+                    keywordList.appendChild(li);
+                })
             }
         }
+
+        let startTime = Date.now();
+                // calculate the time spent
+                setInterval(() => {
+                    let currentTime = Date.now();
+                    let timeSpent = Math.floor((currentTime - startTime) / 1000);
+                    document.getElementById("time-spent").textContent = timeSpent;
+                }, 1000);
     </script>
 </body>
 
