@@ -1,4 +1,4 @@
-var login_username = "Zenhayevsky@proj24.com ";
+var login_username = "Zenhayevsky@proj24.com";
 var login_password = "500Abc";
 
 function load() {
