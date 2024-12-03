@@ -10,7 +10,7 @@
 	  Date: 2024-12-02          -->
 	<title>My Christian Store</title>
 	<link rel="stylesheet" href="../globlaCss/pages.css" />
-	<link rel="stylesheet" href="../globlaCss/modal.css" />
+	<link rel="stylesheet" href="../globlaCss/bigModal.css" />
 	<link rel="stylesheet" href="../globlaCss/card.css" />
 	<script>
 		function closePaymentModalModal() {
@@ -18,7 +18,65 @@
 		}
 	</script>
 	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
+		body {
+			font-family: Arial sans-serif;
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+			flex-wrap: wrap;
+			gap: 16px;
+			padding: 20px;
+		}
+
+		.box {
+			flex: 1;
+			min-width: 250px;
+			max-width: calc(33.333% - 16px);
+			background-color: #daece7;
+			padding: 20px;
+			text-align: center;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			transition: transform 0.3s;
+		}
+
+		.container {
+			flex-wrap: nowrap;
+		}
+
+		.box:hover {
+			transform: scale(1.05);
+		}
+
+		@media (max-width: 768px) {
+			.box {
+				max-width: 100%;
+			}
+		}
+
+		.fields {
+			margin-top: 5px;
+			align-content: start;
+			text-align: start;
+		}
+
+		.fields img {
+			width: 35%;
+			margin-left: 10px;
+		}
+
+		.field {
+			margin-top: 15px;
+		}
 	</style>
 </head>
 
@@ -78,7 +136,7 @@
 					<button onclick="addToCart('Green hoodie', 25, 'qty-greenhoodie')">Add</button>
 				</div>
 			</div>
-			<button style="background-color: #28a745; margin-top: 20px;"  id="open-modal">Go to Payment</button>
+			<button style="background-color: #28a745; margin-top: 20px;" id="open-modal">Go to Payment</button>
 		</section>
 
 		<!--Modal payment-->
@@ -88,21 +146,107 @@
 					&times;
 				</span>
 				<form>
-					<h2>Billing Information</h2>
-					<label for="name">Name: </label>
-					<input type="text" id="name" required />
+					<section class="container">
+						<div class="box">
+							<h2>Shooping List</h2>
+							<div id="cart-summary"></div>
+							<h3>Total: $<span id="total-price">0.00</span></h3>
+						</div>
+						<div class="box">
+							<h2>Billing Information</h2>
+							<!--same adress-->
+							<div class="field">
+								<div class="checkbox-container">
+									<input type="checkbox" id="sameAsShipping" name="sameAsShipping" />
+									<label for="sameAsShipping">Same as my shipping address</label>
+								</div>
+							</div>
 
-					<label for="name">Name: </label>
-					<input type="text" id="name" required />
+							<!--Country-->
+							<div class="field">
+								<div class="checkbox-container">
+									<input type="checkbox" id="sameAsShipping" name="sameAsShipping" />
+									<label for="sameAsShipping">Same as my shipping address</label>
+								</div>
+							</div>
 
-					<label for="name">Name: </label>
-					<input type="text" id="name" required />
+							<label for="name">Name: </label>
+							<input type="text" id="name" required />
 
-					<h2>Shooping List</h2>
-					<div id="cart-summary"></div>
-					<h3>Total: $<span id="total-price">0.00</span></h3>
+							<label for="name">Name: </label>
+							<input type="text" id="name" required />
 
-					<button style="background-color: #11758e;" type="submit">Checkout</button>
+							<label for="name">Name: </label>
+							<input type="text" id="name" required />
+						</div>
+						<div class="box">
+							<h2>Paying Information</h2>
+							<div class="fields">
+								<!--radio button -->
+								<div class="field">
+									<label>
+										<input type="radio" name="billingOption" value="" billTo required />
+										Bill to
+									</label>
+								</div>
+
+								<!--card type-->
+								<div class="field" style="display: flex;">
+									<select style="height: 20px;" id="cardType" name="cardType" required>
+										<option value="" disabled selected>Card</option>
+										<option value="Master Card">MasterCard</option>
+										<option value="Visa">Visa</option>
+										<option value="American Express">American Express</option>
+									</select>
+									<img src="../images/visa-mastercard-amex_0.png" alt="Type of card">
+								</div>
+
+								<!--card number -->
+								<div class="field">
+									<label for="cardNumber">Card Number</label>
+									<input type="number" id="cardNumber" name="cardNumber" required />
+								</div>
+
+								<!-- Expiration Date  -->
+								<div class="field">
+									<label for="expiryMonth">Expiration Date </label>
+									<select id="expiryMonth" name="expiryMonth" required>
+										<option value="" disabled selected>Month</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>
+
+									<select id="expiryYear" name="expiryYear" required>
+										<option value="" disabled selected>Year</option>
+										<option value="2024">2024</option>
+										<option value="2025">2025</option>
+										<option value="2026">2026</option>
+										<option value="2027">2027</option>
+										<option value="2028">2028</option>
+									</select>
+								</div>
+
+								<!-- Security code -->
+								<div class="field">
+									<label for="securityCode">Security Code</label>
+									<input type="number" id="securityCode" name="securityCode" />
+								</div>
+								<div class="field">
+									<button style="background-color: #11758e;" type="submit">Checkout</button>
+								</div>
+							</div>
+						</div>
+					</section>
 				</form>
 			</div>
 		</div>

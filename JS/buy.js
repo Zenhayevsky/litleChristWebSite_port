@@ -1,10 +1,10 @@
 let cart = [];
-const TAX_RATE = 0.13;
+const TAX_RATE = 0.15; // quebec
 const modal = document.getElementById("payment-modal");
 const openModalButton = document.getElementById("open-modal");
 
 openModalButton.addEventListener("click", () => {
-    updateCartSummary(); //u[date cart details before showing]
+    updateCartSummary(); //update cart details before showing]
     modal.style.display = "block";
 })
 
@@ -32,11 +32,11 @@ function updateCartSummary() {
     const cartSummary = document.getElementById("cart-summary");
     const totalPriceE1 = document.getElementById("total-price");
 
-    cartSummary.innerHTML = ""; //cart previous summary
+    cartSummary.innerHTML = ""; //clear previous summary
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     let subtotal = 0;
 
-    storedCart.array.forEach(element => {
+    storedCart.forEach(element => {
         const totalItemPrice = element.price * element.quantity;
         subtotal += totalItemPrice;
 
@@ -51,7 +51,7 @@ function updateCartSummary() {
     cartSummary.insertAdjacentHTML(
         "beforeend",
         `<p>Subtotal: $${subtotal.toFixed(2)}</p>
-        <p>Taxes (13%): $${taxes.toFixed(2)}</p>
+        <p>Taxes (15%): $${taxes.toFixed(2)}</p>
         <p><strong>Total:$${total.toFixed(2)}</strong></p>`
     );
 
