@@ -1,41 +1,52 @@
 .pageIdentifier {
-    position: fixed;
-    right: 55px;
-    bottom: 90px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    z-index: 1000;
-    color: antiquewhite;
-    background-color: rgb(3, 61, 52);
-    border-radius: 10px;
-    padding: 10px  25px 10px 25px;
-    font-size: 1.2em;
+  position: fixed;
+  right: 55px;
+  bottom: 90px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+  color: antiquewhite;
+  background-color: rgb(3, 61, 52);
+  border-radius: 10px;
+  padding: 10px 25px 10px 25px;
+  font-size: 1.2em;
 }
 
-
-
 .floatingDiv {
-    width: 85%;
-    height: 85%;
-    background-color: rgba(144, 79, 14, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    padding: 30px 30px 10px 30px;
+  width: 85%;
+  height: 85%;
+  background-color: rgba(144, 79, 14, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 30px 30px 10px 30px;
+  color: white;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .welcomeBg {
-    background: url("../images/cruzBackground.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+  background: url("../images/cruzBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+button {
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
 }

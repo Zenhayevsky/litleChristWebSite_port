@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en">
+
+<head>
+	<!-- Zenhayevsky Carolina Solorzano Acevedo
+      Description: Christian store
+	  Date: 2024-12-02          -->
+	<title>My Christian Store</title>
+	<link rel="stylesheet" href="../globlaCss/pages.css" />
+	<link rel="stylesheet" href="../globlaCss/modal.css" />
+	<link rel="stylesheet" href="../globlaCss/card.css" />
+	<script>
+		function closePaymentModalModal() {
+			document.getElementById("payment-modal").style.display = "none";
+		}
+	</script>
+	<style type="text/css">
+
+	</style>
+</head>
+
+<body class="welcomeBg">
+	<div class="floatingDiv">
+		<div class="pageIdentifier">My Christian Store</div>
+		<section id="products">
+			<h2>Our products</h2>
+			<div class="product-grid">
+				<div class="product-card">
+					<img src="../images/recive.jpg" alt="Wooden cross">
+					<h3>Wooden Cross</h3>
+					<p>Price: $15</p>
+					<input type="number" min="1" value="1" id="qty-wooden-cross" />
+					<button onclick="addToCart('Wooden Cross', 15, 'qty-wooden-cross')">Add</button>
+				</div>
+				<div class="product-card">
+					<img src="../images/recive.jpg" alt="Wooden cross">
+					<h3>Wooden Cross</h3>
+					<p>Price: $15</p>
+					<input type="number" min="1" value="1" id="qty-wooden-cross" />
+					<button onclick="addToCart('Wooden Cross', 15, 'qty-wooden-cross')">Add</button>
+				</div>
+				<div class="product-card">
+					<img src="../images/recive.jpg" alt="Wooden cross">
+					<h3>Wooden Cross</h3>
+					<p>Price: $15</p>
+					<input type="number" min="1" value="1" id="qty-wooden-cross" />
+					<button onclick="addToCart('Wooden Cross', 15, 'qty-wooden-cross')">Add</button>
+				</div>
+				<div class="product-card">
+					<img src="../images/recive.jpg" alt="Wooden cross">
+					<h3>Wooden Cross</h3>
+					<p>Price: $15</p>
+					<input type="number" min="1" value="1" id="qty-wooden-cross" />
+					<button onclick="addToCart('Wooden Cross', 15, 'qty-wooden-cross')">Add</button>
+				</div>
+				<div class="product-card">
+					<img src="../images/recive.jpg" alt="Wooden cross">
+					<h3>Wooden Cross</h3>
+					<p>Price: $15</p>
+					<input type="number" min="1" value="1" id="qty-wooden-cross" />
+					<button onclick="addToCart('Wooden Cross', 15, 'qty-wooden-cross')">Add</button>
+				</div>
+				<div class="product-card">
+					<img src="../images/recive.jpg" alt="Wooden cross">
+					<h3>Wooden Cross</h3>
+					<p>Price: $15</p>
+					<input type="number" min="1" value="1" id="qty-wooden-cross" />
+					<button onclick="addToCart('Wooden Cross', 15, 'qty-wooden-cross')">Add</button>
+				</div>
+			</div>
+			<button style="background-color: #28a745; margin-top: 10px;"  id="open-modal">Go to Payment</button>
+		</section>
+
+		<!--Modal payment-->
+		<div id="payment-modal" class="modal">
+			<div class="modal-content">
+				<span class="close" onclick="closePaymentModalModal()">
+					&times;
+				</span>
+				<form>
+					<h2>Billing Information</h2>
+					<label for="name">Name: </label>
+					<input type="text" id="name" required />
+
+					<label for="name">Name: </label>
+					<input type="text" id="name" required />
+
+					<label for="name">Name: </label>
+					<input type="text" id="name" required />
+
+					<h2>Shooping List</h2>
+					<div id="cart-summary"></div>
+					<h3>Total: $<span id="total-price">0.00</span></h3>
+
+					<button style="background-color: #11758e;" type="submit">Checkout</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="../JS/buy.js"></script>
+</body>
+
+</html>

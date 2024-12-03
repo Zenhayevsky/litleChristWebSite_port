@@ -5,7 +5,7 @@ function load() {
   $(document).ready(function () {
     $(".login").show(); //show class login when you load the page
     $(".logout").hide(); //hide class logout when you load the page
-    $(".menuLogin").hide(); // show menuLogin
+    $(".menuLogin").show(); // show menuLogin
   });
 }
 
