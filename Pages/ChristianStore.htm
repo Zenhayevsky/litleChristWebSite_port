@@ -12,11 +12,7 @@
 	<link rel="stylesheet" href="../globlaCss/pages.css" />
 	<link rel="stylesheet" href="../globlaCss/bigModal.css" />
 	<link rel="stylesheet" href="../globlaCss/card.css" />
-	<script>
-		function closePaymentModalModal() {
-			document.getElementById("payment-modal").style.display = "none";
-		}
-	</script>
+	<link rel="stylesheet" href="../globlaCss/form.css" />
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -28,54 +24,10 @@
 			font-family: Arial sans-serif;
 		}
 
-		.container {
-			display: flex;
-			justify-content: space-between;
-			align-items: stretch;
-			flex-wrap: wrap;
-			gap: 16px;
-			padding: 20px;
-		}
-
-		.box {
-			flex: 1;
-			min-width: 250px;
-			max-width: calc(33.333% - 16px);
-			background-color: #daece7;
-			padding: 20px;
-			text-align: center;
-			border: 1px solid #ddd;
-			border-radius: 8px;
-			transition: transform 0.3s;
-		}
-
-		.container {
-			flex-wrap: nowrap;
-		}
-
-		.box:hover {
-			transform: scale(1.05);
-		}
-
 		@media (max-width: 768px) {
 			.box {
 				max-width: 100%;
 			}
-		}
-
-		.fields {
-			margin-top: 5px;
-			align-content: start;
-			text-align: start;
-		}
-
-		.fields img {
-			width: 35%;
-			margin-left: 10px;
-		}
-
-		.field {
-			margin-top: 15px;
 		}
 	</style>
 </head>
@@ -90,53 +42,62 @@
 					<img src="../images/beigehoodie.png" alt="Beige hoodie">
 					<h3>Beige hoodie</h3>
 					<p>$30</p>
-					<input type="number" min="1" value="1" id="qty-beigehoodie" />
+					<input type="number" min="0" value="0" id="qty-beigehoodie" />
 					<button onclick="addToCart('beigehoodie', 30, 'qty-beigehoodie')">Add</button>
 				</div>
 				<div class="product-card">
 					<img src="../images/pinkhoodie.png" alt="Pink hoodie">
 					<h3>Pink hoodie</h3>
 					<p>$35</p>
-					<input type="number" min="1" value="1" id="qty-pinkhoodie" />
+					<input type="number" min="0" value="0" id="qty-pinkhoodie" />
 					<button onclick="addToCart('Pink hoodie', 35, 'qty-pinkhoodie')">Add</button>
 				</div>
 				<div class="product-card">
 					<img src="../images/blackhoodie.png" alt="Black hoodie">
 					<h3>Black hoodie</h3>
 					<p>$20</p>
-					<input type="number" min="1" value="1" id="qty-blackhoodie" />
+					<input type="number" min="0" value="0" id="qty-blackhoodie" />
 					<button onclick="addToCart('Black hoodie', 20, 'qty-blackhoodie')">Add</button>
 				</div>
 				<div class="product-card">
 					<img src="../images/brownhoodie.png" alt="Brown hoodie">
 					<h3>Brown hoodie</h3>
 					<p>$22</p>
-					<input type="number" min="1" value="1" id="qty-brownhoodie" />
+					<input type="number" min="0" value="0" id="qty-brownhoodie" />
 					<button onclick="addToCart('Brown hoodie', 22, 'qty-brownhoodie')">Add</button>
 				</div>
 				<div class="product-card">
 					<img src="../images/redhoodie.png" alt="Red hoodie">
 					<h3>Red hoodie</h3>
 					<p>$28</p>
-					<input type="number" min="1" value="1" id="qty-redhoodie" />
+					<input type="number" min="0" value="0" id="qty-redhoodie" />
 					<button onclick="addToCart('Red hoodie', 18, 'qty-redhoodie')">Add</button>
 				</div>
 				<div class="product-card">
 					<img src="../images/bluehoodie.png" alt="Blue hoodie">
 					<h3>Blue hoodie</h3>
 					<p>$25</p>
-					<input type="number" min="1" value="1" id="qty-bluehoodie" />
+					<input type="number" min="0" value="0" id="qty-bluehoodie" />
 					<button onclick="addToCart('Blue hoodie', 25, 'qty-bluehoodie')">Add</button>
 				</div>
 				<div class="product-card">
 					<img src="../images/greenhoodie.png" alt="Green hoodie">
 					<h3>Green hoodie</h3>
 					<p>$25</p>
-					<input type="number" min="1" value="1" id="qty-greenhoodie" />
+					<input type="number" min="0" value="0" id="qty-greenhoodie" />
 					<button onclick="addToCart('Green hoodie', 25, 'qty-greenhoodie')">Add</button>
 				</div>
 			</div>
-			<button style="background-color: #28a745; margin-top: 20px;" id="open-modal">Go to Payment</button>
+			<div style="display: flex; margin-top: 20px;">
+				<label>You have in your cart:</label>
+				<p id="itemsOnCart"></p>
+			</div>
+			<button style="background-color: #28a745; margin-top: 20px;" id="open-modal">Go to Cart</button>
+			<button style="background-color: #11758e;" onclick="clearCart()">Empty Cart</button>
+
+			<p
+				style="align-self: self-end; margin-left: 0px; margin-right: 70%; margin-top: 50px; color:#cdbe82; position: absolute; ">
+				Time spent in this page: <span id="time-spent-products">0</span> segundos</p>
 		</section>
 
 		<!--Modal payment-->
@@ -145,39 +106,84 @@
 				<span class="close" onclick="closePaymentModalModal()">
 					&times;
 				</span>
-				<form>
+				<form id="payment-form">
 					<section class="container">
 						<div class="box">
 							<h2>Shooping List</h2>
-							<div id="cart-summary"></div>
-							<h3>Total: $<span id="total-price">0.00</span></h3>
+							<div class="fields">
+								<div class="field">
+
+									<div id="cart-summary"></div>
+									<h3>Total: $<span id="total-price">0.00</span></h3>
+								</div>
+							</div>
 						</div>
 						<div class="box">
 							<h2>Billing Information</h2>
 							<!--same adress-->
-							<div class="field">
-								<div class="checkbox-container">
-									<input type="checkbox" id="sameAsShipping" name="sameAsShipping" />
-									<label for="sameAsShipping">Same as my shipping address</label>
+							<div class="fields">
+								<div class="field">
+									<div class="checkbox-container">
+										<input type="checkbox" id="sameAsShipping" name="sameAsShipping" />
+										<label for="sameAsShipping">Same as my shipping address</label>
+									</div>
+								</div>
+								<!--Basic data-->
+								<div class="field">
+									<label for="firstname">Firstname: </label>
+									<input style="width: 175px;" type="text" id="firstname" name="firstname" required />
+								</div>
+
+								<div class="field">
+									<label for="lasttname">Lasttname: </label>
+									<input style="width: 172px;" type="text" id="lasttname" name="lasttname" required />
+								</div>
+
+								<!--Country-->
+								<div class="field">
+									<label for="country">Country</label>
+									<select style="width: 189px;" id="country" name="country" required>
+										<option value="" disabled selected>Select country</option>
+										<option value="Canada">Canada</option>
+										<option value="United States">United States</option>
+									</select>
+								</div>
+
+								<!--Province-->
+								<div class="field">
+									<label for="province">Province/State</label>
+									<select id="province" name="province" required>
+										<option value="" disabled selected>Select Province/State</option>
+									</select>
+								</div>
+
+								<div class="field">
+									<label for="street">Street: </label>
+									<input style="width: 200px;" type="text" id="street" name="street" required />
+								</div>
+
+								<div class="field">
+									<label for="city">City: </label>
+									<input style="width: 210px;" type="text" id="city" name="city" required />
+								</div>
+
+								<div class="field">
+									<label for="postalCode">Postal Code: </label>
+									<input style="width: 160px;" type="text" id="postalCode" name="postalCode"
+										required />
+								</div>
+
+								<div class="field">
+									<label for="phoneNumber">Phone number: </label>
+									<input style="width: 143px;" type="text" id="phoneNumber" name="phoneNumber"
+										required />
+								</div>
+
+								<div class="field">
+									<label for="aptNumber">APT Number: </label>
+									<input style="width: 149px;" type="text" id="aptNumber" name="aptNumber" required />
 								</div>
 							</div>
-
-							<!--Country-->
-							<div class="field">
-								<div class="checkbox-container">
-									<input type="checkbox" id="sameAsShipping" name="sameAsShipping" />
-									<label for="sameAsShipping">Same as my shipping address</label>
-								</div>
-							</div>
-
-							<label for="name">Name: </label>
-							<input type="text" id="name" required />
-
-							<label for="name">Name: </label>
-							<input type="text" id="name" required />
-
-							<label for="name">Name: </label>
-							<input type="text" id="name" required />
 						</div>
 						<div class="box">
 							<h2>Paying Information</h2>
@@ -192,6 +198,7 @@
 
 								<!--card type-->
 								<div class="field" style="display: flex;">
+									<label for="cardType">Card Type</label>
 									<select style="height: 20px;" id="cardType" name="cardType" required>
 										<option value="" disabled selected>Card</option>
 										<option value="Master Card">MasterCard</option>
@@ -238,8 +245,8 @@
 
 								<!-- Security code -->
 								<div class="field">
-									<label for="securityCode">Security Code</label>
-									<input type="number" id="securityCode" name="securityCode" />
+									<label for="securityCode">Security Number</label>
+									<input style="width: 160px;" type="number" id="securityCode" name="securityCode" />
 								</div>
 								<div class="field">
 									<button style="background-color: #11758e;" type="submit">Checkout</button>
@@ -252,6 +259,17 @@
 		</div>
 	</div>
 	<script src="../JS/buy.js"></script>
+	<script src="../JS/provinces.js"></script>
+	<script>
+		document.getElementById("payment-modal").style.display = "none";
+		document.getElementById("payment-form").addEventListener("submit", (e) => {
+			e.preventDefault();
+		});
+
+		function closePaymentModalModal() {
+			document.getElementById("payment-modal").style.display = "none";
+		}
+	</script>
 </body>
 
 </html>

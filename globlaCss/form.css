@@ -1,0 +1,42 @@
+
+
+.fields {
+    margin-top: 5px;
+    align-content: start;
+    text-align: start;
+}
+
+.fields img {
+    width: 35%;
+    margin-left: 10px;
+}
+
+.field {
+    margin-top: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px;
+    flex-wrap: nowrap;
+}
+
+.box {
+    flex: 1;
+    min-width: 250px;
+    max-width: calc(33.333% - 16px);
+    background-color: #daece7;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
