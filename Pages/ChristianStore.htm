@@ -6,7 +6,7 @@
 
 <head>
 	<!-- Zenhayevsky Carolina Solorzano Acevedo
-      Description: Christian store
+      Description: Christian store for th user
 	  Date: 2024-12-02          -->
 	<title>My Christian Store</title>
 	<link rel="stylesheet" href="../globlaCss/pages.css" />
@@ -35,53 +35,53 @@
 <body class="welcomeBg">
 	<div class="floatingDiv">
 		<div class="pageIdentifier">My Christian Store</div>
-		<section id="products">
+		<div id="products">
 			<h2>Our products</h2>
 			<div class="product-grid">
 				<div class="product-card">
-					<img src="../images/beigehoodie.png" alt="Beige hoodie">
+					<img src="../images/beigehoodie.png" alt="Beige hoodie" />
 					<h3>Beige hoodie</h3>
 					<p>$30</p>
 					<input type="number" min="0" value="0" id="qty-beigehoodie" />
 					<button onclick="addToCart('beigehoodie', 30, 'qty-beigehoodie')">Add</button>
 				</div>
 				<div class="product-card">
-					<img src="../images/pinkhoodie.png" alt="Pink hoodie">
+					<img src="../images/pinkhoodie.png" alt="Pink hoodie" />
 					<h3>Pink hoodie</h3>
 					<p>$35</p>
 					<input type="number" min="0" value="0" id="qty-pinkhoodie" />
 					<button onclick="addToCart('Pink hoodie', 35, 'qty-pinkhoodie')">Add</button>
 				</div>
 				<div class="product-card">
-					<img src="../images/blackhoodie.png" alt="Black hoodie">
+					<img src="../images/blackhoodie.png" alt="Black hoodie" />
 					<h3>Black hoodie</h3>
 					<p>$20</p>
 					<input type="number" min="0" value="0" id="qty-blackhoodie" />
 					<button onclick="addToCart('Black hoodie', 20, 'qty-blackhoodie')">Add</button>
 				</div>
 				<div class="product-card">
-					<img src="../images/brownhoodie.png" alt="Brown hoodie">
+					<img src="../images/brownhoodie.png" alt="Brown hoodie" />
 					<h3>Brown hoodie</h3>
 					<p>$22</p>
 					<input type="number" min="0" value="0" id="qty-brownhoodie" />
 					<button onclick="addToCart('Brown hoodie', 22, 'qty-brownhoodie')">Add</button>
 				</div>
 				<div class="product-card">
-					<img src="../images/redhoodie.png" alt="Red hoodie">
+					<img src="../images/redhoodie.png" alt="Red hoodie" />
 					<h3>Red hoodie</h3>
 					<p>$28</p>
 					<input type="number" min="0" value="0" id="qty-redhoodie" />
 					<button onclick="addToCart('Red hoodie', 18, 'qty-redhoodie')">Add</button>
 				</div>
 				<div class="product-card">
-					<img src="../images/bluehoodie.png" alt="Blue hoodie">
+					<img src="../images/bluehoodie.png" alt="Blue hoodie" />
 					<h3>Blue hoodie</h3>
 					<p>$25</p>
 					<input type="number" min="0" value="0" id="qty-bluehoodie" />
 					<button onclick="addToCart('Blue hoodie', 25, 'qty-bluehoodie')">Add</button>
 				</div>
 				<div class="product-card">
-					<img src="../images/greenhoodie.png" alt="Green hoodie">
+					<img src="../images/greenhoodie.png" alt="Green hoodie" />
 					<h3>Green hoodie</h3>
 					<p>$25</p>
 					<input type="number" min="0" value="0" id="qty-greenhoodie" />
@@ -98,7 +98,7 @@
 			<p
 				style="align-self: self-end; margin-left: 0px; margin-right: 70%; margin-top: 50px; color:#cdbe82; position: absolute; ">
 				Time spent in this page: <span id="time-spent-products">0</span> segundos</p>
-		</section>
+		</div>
 
 		<!--Modal payment-->
 		<div id="payment-modal" class="modal">
@@ -106,8 +106,8 @@
 				<span class="close" onclick="closePaymentModalModal()">
 					&times;
 				</span>
-				<form id="payment-form">
-					<section class="container">
+				<form id="payment-form" action="">
+					<div class="container">
 						<div class="box">
 							<h2>Shooping List</h2>
 							<div class="fields">
@@ -131,18 +131,20 @@
 								<!--Basic data-->
 								<div class="field">
 									<label for="firstname">Firstname: </label>
-									<input style="width: 175px;" type="text" id="firstname" name="firstname" required />
+									<input style="width: 175px;" type="text" id="firstname" name="firstname"
+										required="required" />
 								</div>
 
 								<div class="field">
 									<label for="lasttname">Lasttname: </label>
-									<input style="width: 172px;" type="text" id="lasttname" name="lasttname" required />
+									<input style="width: 172px;" type="text" id="lasttname" name="lasttname"
+										required="required" />
 								</div>
 
 								<!--Country-->
 								<div class="field">
 									<label for="country">Country</label>
-									<select style="width: 189px;" id="country" name="country" required>
+									<select style="width: 189px;" id="country" name="country" required="required">
 										<option value="" disabled selected>Select country</option>
 										<option value="Canada">Canada</option>
 										<option value="United States">United States</option>
@@ -152,36 +154,39 @@
 								<!--Province-->
 								<div class="field">
 									<label for="province">Province/State</label>
-									<select id="province" name="province" required>
+									<select id="province" name="province" required="required">
 										<option value="" disabled selected>Select Province/State</option>
 									</select>
 								</div>
 
 								<div class="field">
 									<label for="street">Street: </label>
-									<input style="width: 200px;" type="text" id="street" name="street" required />
+									<input style="width: 200px;" type="text" id="street" name="street"
+										required="required" />
 								</div>
 
 								<div class="field">
 									<label for="city">City: </label>
-									<input style="width: 210px;" type="text" id="city" name="city" required />
+									<input style="width: 210px;" type="text" id="city" name="city"
+										required="required" />
 								</div>
 
 								<div class="field">
 									<label for="postalCode">Postal Code: </label>
 									<input style="width: 160px;" type="text" id="postalCode" name="postalCode"
-										required />
+										required="required" />
 								</div>
 
 								<div class="field">
 									<label for="phoneNumber">Phone number: </label>
 									<input style="width: 143px;" type="text" id="phoneNumber" name="phoneNumber"
-										required />
+										required="required" />
 								</div>
 
 								<div class="field">
 									<label for="aptNumber">APT Number: </label>
-									<input style="width: 149px;" type="text" id="aptNumber" name="aptNumber" required />
+									<input style="width: 149px;" type="text" id="aptNumber" name="aptNumber"
+										required="required" />
 								</div>
 							</div>
 						</div>
@@ -191,7 +196,7 @@
 								<!--radio button -->
 								<div class="field">
 									<label>
-										<input type="radio" name="billingOption" value="" billTo required />
+										<input type="radio" name="billingOption" value="" required="required" />
 										Bill to
 									</label>
 								</div>
@@ -199,25 +204,25 @@
 								<!--card type-->
 								<div class="field" style="display: flex;">
 									<label for="cardType">Card Type</label>
-									<select style="height: 20px;" id="cardType" name="cardType" required>
+									<select style="height: 20px;" id="cardType" name="cardType" required="required">
 										<option value="" disabled selected>Card</option>
 										<option value="Master Card">MasterCard</option>
 										<option value="Visa">Visa</option>
 										<option value="American Express">American Express</option>
 									</select>
-									<img src="../images/visa-mastercard-amex_0.png" alt="Type of card">
+									<img src="../images/visa-mastercard-amex_0.png" alt="Type of card" />
 								</div>
 
 								<!--card number -->
 								<div class="field">
 									<label for="cardNumber">Card Number</label>
-									<input type="number" id="cardNumber" name="cardNumber" required />
+									<input type="number" id="cardNumber" name="cardNumber" required="required" />
 								</div>
 
 								<!-- Expiration Date  -->
 								<div class="field">
 									<label for="expiryMonth">Expiration Date </label>
-									<select id="expiryMonth" name="expiryMonth" required>
+									<select id="expiryMonth" name="expiryMonth" required="required">
 										<option value="" disabled selected>Month</option>
 										<option value="01">01</option>
 										<option value="02">02</option>
@@ -233,7 +238,7 @@
 										<option value="12">12</option>
 									</select>
 
-									<select id="expiryYear" name="expiryYear" required>
+									<select id="expiryYear" name="expiryYear" required="required">
 										<option value="" disabled selected>Year</option>
 										<option value="2024">2024</option>
 										<option value="2025">2025</option>
@@ -253,14 +258,14 @@
 								</div>
 							</div>
 						</div>
-					</section>
+					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	<script src="../JS/buy.js"></script>
-	<script src="../JS/provinces.js"></script>
-	<script>
+	<script type="text/javascript" src="../JS/buy.js"></script>
+	<script type="text/javascript" src="../JS/provinces.js"></script>
+	<script type="text/javascript">
 		document.getElementById("payment-modal").style.display = "none";
 		document.getElementById("payment-form").addEventListener("submit", (e) => {
 			e.preventDefault();
