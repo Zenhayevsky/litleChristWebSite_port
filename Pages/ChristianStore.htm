@@ -275,6 +275,59 @@
 			document.getElementById("payment-modal").style.display = "none";
 		}
 	</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function validateEmail(email) {
+			var regex = /^[a-zA-Z0-9._%+-]+@lasallecollege\.com$/;
+			return regex.test(email);
+		}
+
+		function validatePassword(password) {
+			var regex = /^[a-zA-Z0-9]{6,23}$/;
+			return regex.test(password);
+		}
+
+		
+		function setCookie(c_name, value, exsec) {
+			var exdate = new Date();
+			exdate.setTime(exdate.getTime() + (exsec * 1000));
+			var c_value = escape(value) + "; expires=" + exdate.toUTCString();
+			document.cookie = c_name + "=" + c_value;
+		}
+
+
+		function checkForm() {
+			var email = document.getElementById("login").value;
+			var password = document.getElementById("password").value;
+			var errorMessage = $("#errorMessage");
+
+			
+			errorMessage.text("");
+
+			
+			if (!validateEmail(email)) {
+				errorMessage.text("Invalid email format. Please use your college email (e.g., user@lasallecollege.com).");
+				return false;
+			}
+
+			
+			if (!validatePassword(password)) {
+				errorMessage.text("Invalid password. Password must be 6-23 characters long and contain only letters and numbers.");
+				return false;
+			}
+
+		
+			setCookie("studentEmail", email, 23); 
+
+			
+			$("#nextPageLink").show();
+
+		
+			return true;
+		}
+	</script>
 </body>
 
 </html>
